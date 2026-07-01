@@ -1,5 +1,6 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react-swc";
+import { imagetools } from "vite-imagetools";
 import path from "path";
 // https://vitejs.dev/config/
 export default defineConfig(() => ({
@@ -10,7 +11,14 @@ export default defineConfig(() => ({
       overlay: false,
     },
   },
-  plugins: [react()],
+  plugins: [
+    react(),
+    // Every imported image becomes a responsive AVIF/WebP/JPEG <picture> payload.
+    imagetools({
+      defaultDirectives: () =>
+        new URLSearchParams({ format: "avif;webp;jpg", w: "480;768;1080", as: "picture" }),
+    }),
+  ],
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),

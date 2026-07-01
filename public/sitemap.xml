@@ -2,32 +2,26 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://goldenstatewindows.com/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <lastmod>2026-07-01</lastmod>
   </url>
   <url>
     <loc>https://goldenstatewindows.com/services</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
+    <lastmod>2026-07-01</lastmod>
   </url>
   <url>
     <loc>https://goldenstatewindows.com/gallery</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <lastmod>2026-07-01</lastmod>
   </url>
   <url>
     <loc>https://goldenstatewindows.com/about</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <lastmod>2026-07-01</lastmod>
   </url>
   <url>
     <loc>https://goldenstatewindows.com/contact</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <lastmod>2026-07-01</lastmod>
   </url>
   <url>
     <loc>https://goldenstatewindows.com/privacy</loc>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
+    <lastmod>2026-07-01</lastmod>
   </url>
 </urlset>

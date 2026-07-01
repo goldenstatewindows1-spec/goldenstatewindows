@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
-import { Helmet } from "react-helmet-async";
 import { ArrowRight, Check, Phone, Shield, Award, Wrench, Leaf, Star } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Seo } from "@/components/site/Seo";
+import { Picture } from "@/components/site/Picture";
 import { SITE } from "@/lib/site";
 import heroImg from "@/assets/hero-window.jpg";
 import galleryEnergy from "@/assets/services-energy.jpg";
@@ -48,14 +48,10 @@ const HomePage = () => {
   return (
     <>
       <Seo
-        title="Golden State Windows | Bay Area Window Replacement & Siding Since 1989"
-        description="Golden State Windows is the San Francisco Bay Area's largest and most trusted window replacement, installation, and siding company. 8,000+ homes since 1989, 4.8★ on Yelp, full lifetime warranty. Free consultation: (800) 748-6448."
+        title="Bay Area Window Replacement & Siding | Golden State Windows"
+        description="The Bay Area's most trusted window replacement, installation & siding since 1989 — 8,000+ homes, 4.8★ on Yelp, full lifetime warranty. Free quote: (800) 748-6448."
         path="/"
       />
-      <Helmet>
-        {/* Preload the LCP hero image so the browser fetches it before React mounts. */}
-        <link rel="preload" as="image" href={heroImg} />
-      </Helmet>
       {/* HERO */}
       <section className="relative overflow-hidden">
         <div className="absolute inset-0 grid-bg opacity-25 pointer-events-none" />
@@ -106,12 +102,11 @@ const HomePage = () => {
 
             <div className="lg:col-span-6 animate-fade-in">
               <div className="relative aspect-[4/5] bg-surface overflow-hidden group shadow-[0_30px_80px_-20px_hsl(0_0%_0%/0.6)]">
-                <img
-                  src={heroImg}
+                <Picture
+                  image={heroImg}
                   alt="Energy-efficient window replacement in a modern San Francisco Bay Area home"
-                  width={1080}
-                  height={1350}
-                  decoding="async"
+                  sizes="(min-width: 1024px) 45vw, 100vw"
+                  priority
                   className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent opacity-70" />
@@ -160,12 +155,10 @@ const HomePage = () => {
                   {s.code} / {s.title.split(" ")[0].toUpperCase()}
                 </div>
                 <div className="aspect-[4/3] bg-surface mb-8 overflow-hidden">
-                  <img
-                    src={s.img}
+                  <Picture
+                    image={s.img}
                     alt={`${s.title} services in the San Francisco Bay Area`}
-                    width={1280}
-                    height={960}
-                    loading="lazy"
+                    sizes="(min-width: 768px) 33vw, 100vw"
                     className="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700"
                   />
                 </div>

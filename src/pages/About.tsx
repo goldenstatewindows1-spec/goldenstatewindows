@@ -1,5 +1,6 @@
 import { PageHeader } from "@/components/site/PageHeader";
 import { Seo } from "@/components/site/Seo";
+import { Picture } from "@/components/site/Picture";
 import { breadcrumbLd } from "@/lib/jsonld";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
@@ -39,7 +40,7 @@ const AboutPage = () => {
       <section className="container-tight py-14 grid lg:grid-cols-12 gap-16 items-center">
         <div className="lg:col-span-6">
           <div className="aspect-[4/5] bg-surface overflow-hidden">
-            <img src={hero} alt="Golden State Windows installation on a San Francisco Bay Area home" width={1080} height={1350} loading="lazy" className="w-full h-full object-cover" />
+            <Picture image={hero} alt="Golden State Windows installation on a San Francisco Bay Area home" sizes="(min-width: 1024px) 45vw, 100vw" className="w-full h-full object-cover" />
           </div>
         </div>
         <div className="lg:col-span-6 space-y-6">

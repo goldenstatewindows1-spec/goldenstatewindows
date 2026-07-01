@@ -3,6 +3,7 @@ import { ArrowRight, Check } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { PageHeader } from "@/components/site/PageHeader";
 import { Seo } from "@/components/site/Seo";
+import { Picture } from "@/components/site/Picture";
 import { breadcrumbLd } from "@/lib/jsonld";
 import { SITE } from "@/lib/site";
 import gallery2 from "@/assets/gallery-2.jpg";
@@ -88,12 +89,10 @@ const ServicesPage = () => {
             >
               <div className="lg:col-span-6">
                 <div className="aspect-[4/3] bg-surface overflow-hidden group">
-                  <img
-                    src={s.img}
+                  <Picture
+                    image={s.img}
                     alt={`${s.title} in the San Francisco Bay Area by Golden State Windows`}
-                    width={1280}
-                    height={960}
-                    loading="lazy"
+                    sizes="(min-width: 1024px) 50vw, 100vw"
                     className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
                   />
                 </div>

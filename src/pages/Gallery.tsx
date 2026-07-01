@@ -1,5 +1,6 @@
 import { PageHeader } from "@/components/site/PageHeader";
 import { Seo } from "@/components/site/Seo";
+import { Picture } from "@/components/site/Picture";
 import { breadcrumbLd } from "@/lib/jsonld";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
@@ -41,12 +42,10 @@ const GalleryPage = () => {
           {projects.map((p) => (
             <figure key={p.title} className="group bg-background relative overflow-hidden">
               <div className="aspect-[4/5] overflow-hidden bg-surface">
-                <img
-                  src={p.img}
+                <Picture
+                  image={p.img}
                   alt={`${p.title} — ${p.tag} in ${p.area}, San Francisco Bay Area`}
-                  width={1280}
-                  height={1600}
-                  loading="lazy"
+                  sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
                   className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
                 />
               </div>
