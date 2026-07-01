@@ -1,4 +1,4 @@
-import { Helmet } from "react-helmet-async";
+import { Head } from "vite-react-ssg";
 import { SITE } from "@/lib/site";
 
 const base = SITE.url.replace(/\/$/, "");
@@ -23,7 +23,7 @@ export const Seo = ({ title, description, path, noindex, jsonLd }: SeoProps) => 
   const blocks = jsonLd ? (Array.isArray(jsonLd) ? jsonLd : [jsonLd]) : [];
 
   return (
-    <Helmet prioritizeSeoTags>
+    <Head>
       <title>{title}</title>
       <meta name="description" content={description} />
       <link rel="canonical" href={canonical} />
@@ -33,6 +33,6 @@ export const Seo = ({ title, description, path, noindex, jsonLd }: SeoProps) => 
       {blocks.map((block, i) => (
         <script key={i} type="application/ld+json">{JSON.stringify(block)}</script>
       ))}
-    </Helmet>
+    </Head>
   );
 };

@@ -12,9 +12,9 @@ export const CookieBanner = ({ onAccept, onDecline }: CookieBannerProps) => {
     <div
       role="dialog"
       aria-label="Cookie consent"
-      className="fixed inset-x-0 bottom-0 z-50 md:inset-x-auto md:left-6 md:bottom-6 md:max-w-sm animate-fade-up"
+      className="fixed left-3 right-[5.5rem] bottom-3 z-50 md:left-6 md:right-auto md:bottom-6 md:max-w-sm animate-fade-up"
     >
-      <div className="m-3 md:m-0 rounded-xl border border-white/10 bg-surface shadow-2xl p-5">
+      <div className="rounded-xl border border-white/10 bg-surface shadow-2xl p-5">
         <div className="flex items-start gap-3">
           <div className="size-9 shrink-0 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-primary">
             <Cookie className="size-4" />

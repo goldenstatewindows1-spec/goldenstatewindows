@@ -20,15 +20,16 @@ const ScrollReset = () => {
 };
 
 export const SiteLayout = () => {
-  // Initialize synchronously so the floating buttons don't reposition after mount (avoids CLS).
-  const [cookieOpen, setCookieOpen] = useState(() => {
-    if (typeof window === "undefined") return false;
+  // Effect-based so the server and first client render match (no hydration mismatch).
+  // The banner is a fixed overlay that doesn't move the floating buttons → no CLS.
+  const [cookieOpen, setCookieOpen] = useState(false);
+  useEffect(() => {
     try {
-      return !localStorage.getItem(CONSENT_KEY);
+      if (!localStorage.getItem(CONSENT_KEY)) setCookieOpen(true);
     } catch {
-      return false;
+      /* localStorage unavailable (private mode) — skip the banner */
     }
-  });
+  }, []);
 
   const decide = (value: "accepted" | "declined") => {
     try {
@@ -56,7 +57,7 @@ export const SiteLayout = () => {
       <Footer />
       <ScrollReset />
 
-      <FloatingActions bannerVisible={cookieOpen} />
+      <FloatingActions />
       {cookieOpen && (
         <CookieBanner
           onAccept={() => decide("accepted")}
