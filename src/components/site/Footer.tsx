@@ -105,9 +105,16 @@ export const Footer = () => {
 
         <div className="mt-16 pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4 text-[10px] uppercase tracking-[0.3em] text-muted-foreground">
           <p>© {new Date().getFullYear()} {SITE.name}. All rights reserved.</p>
-          <div className="flex items-center gap-6">
+          <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2">
             <Link to="/privacy" className="hover:text-foreground transition-colors">Privacy Policy</Link>
-            <span>San Francisco Bay Area</span>
+            <a
+              href="https://alexeykachan.com/"
+              target="_blank"
+              rel="noopener"
+              className="hover:text-primary transition-colors"
+            >
+              Website by Alexey Kachan Agency
+            </a>
           </div>
         </div>
       </div>
