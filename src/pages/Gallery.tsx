@@ -1,6 +1,7 @@
 import { PageHeader } from "@/components/site/PageHeader";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
+import { SITE } from "@/lib/site";
 import g1 from "@/assets/gallery-1.jpg";
 import g2 from "@/assets/gallery-2.jpg";
 import g3 from "@/assets/gallery-3.jpg";
@@ -9,12 +10,12 @@ import hero from "@/assets/hero-window.jpg";
 import door from "@/assets/services-door.jpg";
 
 const projects = [
-  { img: g1, title: "Atherton Modern Residence", tag: "Full Replacement", year: "2024", area: "Atherton" },
-  { img: hero, title: "Twilight Hill House", tag: "Custom Glazing", year: "2024", area: "San Francisco" },
-  { img: g2, title: "Indoor-Outdoor Pavilion", tag: "Multi-Slide Doors", year: "2023", area: "Palo Alto" },
-  { img: g4, title: "Marin Hilltop Retreat", tag: "Panoramic Windows", year: "2024", area: "Marin" },
-  { img: g3, title: "Victorian Restoration", tag: "Heritage Glazing", year: "2023", area: "San Francisco" },
-  { img: door, title: "Pivot Entry Statement", tag: "Door Installation", year: "2024", area: "Cupertino" },
+  { img: g1, title: "Full-Frame Window Replacement", tag: "Window Replacement", area: "Peninsula" },
+  { img: hero, title: "Floor-to-Ceiling Glazing", tag: "Custom Windows", area: "San Francisco" },
+  { img: g2, title: "Energy-Efficient Upgrade", tag: "Energy-Efficient Windows", area: "Palo Alto" },
+  { img: g4, title: "Exterior Siding & Windows", tag: "Siding", area: "Marin County" },
+  { img: g3, title: "Heritage Window Restoration", tag: "Window Replacement", area: "San Francisco" },
+  { img: door, title: "Patio & Entry Doors", tag: "Door Installation", area: "Bay Area" },
 ];
 
 const GalleryPage = () => {
@@ -24,7 +25,7 @@ const GalleryPage = () => {
         eyebrow="Selected Work"
         index="02 / PORTFOLIO"
         title={<>A record of <span className="italic font-normal text-primary">precision</span> across the Bay.</>}
-        description="A small selection from over 4,200 completed installations. Every project is photographed by our in-house documentation team."
+        description={`Representative window, siding, and door projects from more than ${SITE.homesServedLabel} homes serviced across the ${SITE.serviceAreaLabel} since ${SITE.foundedYear}.`}
       />
 
       <section className="container-tight py-14">
@@ -34,7 +35,7 @@ const GalleryPage = () => {
               <div className="aspect-[4/5] overflow-hidden bg-surface">
                 <img
                   src={p.img}
-                  alt={p.title}
+                  alt={`${p.title} — ${p.tag} in ${p.area}, San Francisco Bay Area`}
                   width={1280}
                   height={1600}
                   loading="lazy"
@@ -47,7 +48,6 @@ const GalleryPage = () => {
                   <span className="text-[10px] uppercase tracking-[0.25em] text-primary font-semibold">
                     {p.tag}
                   </span>
-                  <span className="text-[10px] technical-mono text-muted-foreground">· {p.year}</span>
                 </div>
                 <h3 className="text-xl font-light tracking-tight">{p.title}</h3>
                 <p className="text-xs uppercase tracking-widest text-muted-foreground mt-2">

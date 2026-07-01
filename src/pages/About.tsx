@@ -5,9 +5,9 @@ import { SITE } from "@/lib/site";
 import hero from "@/assets/hero-window.jpg";
 
 const stats = [
-  { v: "22", l: "Years Operating" },
-  { v: "4,200+", l: "Installations" },
-  { v: "4.9★", l: "Average Rating" },
+  { v: `Since ${SITE.foundedYear}`, l: "In Business" },
+  { v: SITE.homesServedLabel, l: "Homes Serviced" },
+  { v: `${SITE.rating}★`, l: `${SITE.reviewCount} ${SITE.reviewPlatform} Reviews` },
   { v: "100%", l: "In-House Crews" },
 ];
 
@@ -23,25 +23,28 @@ const AboutPage = () => {
       <PageHeader
         eyebrow="About"
         index="03 / FIRM"
-        title={<>A Bay Area firm built on <span className="italic font-normal text-primary">precision</span>.</>}
-        description={`Founded in 2003, ${SITE.name} has spent over two decades installing the most demanding window and door systems across Northern California — from coastal Marin to the Atherton hills.`}
+        title={<>The Bay Area's most trusted <span className="italic font-normal text-primary">window</span> company.</>}
+        description={`Founded in ${SITE.foundedYear}, ${SITE.name} has spent more than three decades installing windows, siding, and doors across the San Francisco Bay Area — trusted by over ${SITE.homesServedLabel} homes.`}
       />
 
       {/* Story */}
       <section className="container-tight py-14 grid lg:grid-cols-12 gap-16 items-center">
         <div className="lg:col-span-6">
           <div className="aspect-[4/5] bg-surface overflow-hidden">
-            <img src={hero} alt="Modern Bay Area architectural installation" width={1080} height={1350} loading="lazy" className="w-full h-full object-cover" />
+            <img src={hero} alt="Golden State Windows installation on a San Francisco Bay Area home" width={1080} height={1350} loading="lazy" className="w-full h-full object-cover" />
           </div>
         </div>
         <div className="lg:col-span-6 space-y-6">
           <span className="eyebrow">Our Story</span>
-          <h2 className="text-4xl md:text-5xl font-light tracking-tight">From a single truck to the peninsula's standard.</h2>
+          <h2 className="text-4xl md:text-5xl font-light tracking-tight">From a single truck to the Bay Area's standard.</h2>
           <p className="text-muted-foreground leading-relaxed">
-            Our founder started installing windows out of a single truck in San Carlos in 2003. The promise was simple: do work he'd be proud to put his name on. Twenty-two years later, that same standard governs every project — whether it's a single sash on a Victorian or 60 openings on a new-construction estate.
+            Our founder started installing windows on the San Francisco Peninsula in {SITE.foundedYear}. The promise was
+            simple: do work he'd be proud to put his name on. More than three decades later, that same standard governs
+            every project — whether it's a single sash on a Victorian or 60 openings on a new-construction estate.
           </p>
           <p className="text-muted-foreground leading-relaxed">
-            We're 100% employee-led. Every measurement, every install, every warranty visit is handled by people on our payroll. That continuity is what allows us to back our work with a true lifetime warranty.
+            We're 100% employee-led. Every measurement, every install, every warranty visit is handled by people on our
+            payroll. That continuity is what allows us to back our work with a true lifetime warranty.
           </p>
         </div>
       </section>
@@ -51,7 +54,7 @@ const AboutPage = () => {
         <div className="container-tight py-12 grid grid-cols-2 md:grid-cols-4 gap-px bg-white/5">
           {stats.map((s) => (
             <div key={s.l} className="bg-background p-8 lg:p-10">
-              <div className="text-5xl md:text-6xl font-light tracking-tighter text-primary mb-3">{s.v}</div>
+              <div className="text-4xl md:text-5xl font-light tracking-tighter text-primary mb-3">{s.v}</div>
               <div className="text-[10px] uppercase tracking-[0.25em] text-muted-foreground font-semibold">{s.l}</div>
             </div>
           ))}
@@ -90,7 +93,7 @@ const AboutPage = () => {
             ))}
           </div>
           <div className="mt-10">
-            <Button asChild><Link to="/contact">Check Your Address</Link></Button>
+            <Button asChild><Link to="/contact">Request a Free Quote</Link></Button>
           </div>
         </div>
       </section>

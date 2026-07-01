@@ -17,9 +17,9 @@ export const Footer = () => {
               </span>
             </div>
             <p className="text-sm text-muted-foreground leading-relaxed max-w-sm">
-              Precision-engineered window and door installation for the Bay
-              Area's most demanding homes. Licensed, insured, and proven for
-              over two decades.
+              Expert window replacement, siding, and door installation for the
+              San Francisco Bay Area. Licensed, bonded, and insured — trusted by
+              over {SITE.homesServedLabel} homes since {SITE.foundedYear}.
             </p>
             <div className="mt-8 flex flex-col gap-3 text-sm">
               <a
@@ -83,15 +83,15 @@ export const Footer = () => {
             <ul className="space-y-3 text-sm text-muted-foreground">
               <li>
                 <span className="block text-[10px] uppercase tracking-widest text-primary mb-0.5">
-                  License
+                  Warranty
                 </span>
-                {SITE.license}
+                {SITE.warranty}
               </li>
               <li>
                 <span className="block text-[10px] uppercase tracking-widest text-primary mb-0.5">
-                  Insurance
+                  {SITE.reviewPlatform} Rating
                 </span>
-                $5M General Liability
+                {SITE.rating}★ · {SITE.reviewCount} reviews
               </li>
               <li>
                 <span className="block text-[10px] uppercase tracking-widest text-primary mb-0.5">

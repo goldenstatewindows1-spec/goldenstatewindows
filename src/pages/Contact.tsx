@@ -14,8 +14,8 @@ const faqs = [
   { q: "How long does a typical window installation take?", a: "Most full-home replacements are completed in 2–5 days depending on the number of openings. We'll provide a precise timeline in your itemized estimate." },
   { q: "Do you handle permits?", a: "Yes. All city and county permitting is handled in-house at no additional charge. We're familiar with every Bay Area municipality's requirements." },
   { q: "What's the warranty?", a: "Lifetime craftsmanship warranty on every install, transferable to a new owner one time. Manufacturer warranties on materials range from 20 years to lifetime depending on the product." },
-  { q: "Do you offer financing?", a: "Yes — 0% APR for 12 months and extended-term plans through our financing partners. We'll walk you through options at the consultation." },
-  { q: "Are you licensed and insured?", a: `Yes. ${SITE.license}, $5M general liability, and full workers' comp coverage. Documentation is available on request.` },
+  { q: "Do you offer financing?", a: "Yes — we offer flexible financing options. Ask your consultant about current plans and terms at your free consultation." },
+  { q: "Are you licensed and insured?", a: `Yes. ${SITE.license}, with full workers' comp coverage. Documentation is available on request.` },
 ];
 
 const ContactPage = () => {
@@ -150,20 +150,20 @@ const ContactPage = () => {
             <span className="eyebrow">Credentials</span>
             <div className="mt-6 space-y-3 text-sm">
               <div className="flex justify-between border-b border-white/5 pb-3">
-                <span className="text-muted-foreground">License</span>
-                <span className="technical-mono">{SITE.license}</span>
+                <span className="text-muted-foreground">Warranty</span>
+                <span className="technical-mono">Lifetime</span>
               </div>
               <div className="flex justify-between border-b border-white/5 pb-3">
-                <span className="text-muted-foreground">Liability</span>
-                <span className="technical-mono">$5M</span>
+                <span className="text-muted-foreground">{SITE.reviewPlatform} Rating</span>
+                <span className="technical-mono">{SITE.rating}★ · {SITE.reviewCount}</span>
               </div>
               <div className="flex justify-between border-b border-white/5 pb-3">
-                <span className="text-muted-foreground">BBB Rating</span>
-                <span className="technical-mono">A+</span>
+                <span className="text-muted-foreground">Homes Serviced</span>
+                <span className="technical-mono">{SITE.homesServedLabel}</span>
               </div>
               <div className="flex justify-between">
                 <span className="text-muted-foreground">In Business Since</span>
-                <span className="technical-mono">2003</span>
+                <span className="technical-mono">{SITE.foundedYear}</span>
               </div>
             </div>
           </div>

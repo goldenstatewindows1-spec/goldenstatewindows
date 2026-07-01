@@ -48,7 +48,7 @@ export const Navbar = () => {
               {SITE.name}
             </div>
             <div className="text-[9px] uppercase tracking-[0.3em] text-muted-foreground">
-              Daly City · Est. 1989
+              {SITE.cityState} · Est. {SITE.foundedYear}
             </div>
           </div>
         </Link>

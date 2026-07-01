@@ -1,52 +1,45 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, Check, Phone, Shield, Award, Wrench, Leaf, Clock, Star } from "lucide-react";
+import { ArrowRight, Check, Phone, Shield, Award, Wrench, Leaf, Star } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { SITE } from "@/lib/site";
 import heroImg from "@/assets/hero-window.jpg";
-import galleryDoor from "@/assets/services-door.jpg";
 import galleryEnergy from "@/assets/services-energy.jpg";
-import gallery1 from "@/assets/gallery-1.jpg";
 import gallery2 from "@/assets/gallery-2.jpg";
+import gallery4 from "@/assets/gallery-4.jpg";
 
 const trust = [
-  { label: "Licensed", value: SITE.license },
-  { label: "Insured", value: "$5M Liability" },
-  { label: "Experience", value: `${SITE.yearsInBusiness}+ Years` },
-  { label: "Financing", value: "0% APR Available" },
+  { label: "Established", value: `Since ${SITE.foundedYear}` },
+  { label: "Homes Served", value: SITE.homesServedLabel },
+  { label: `${SITE.reviewPlatform} Rating`, value: `${SITE.rating}★ · ${SITE.reviewCount}` },
+  { label: "Warranty", value: "Lifetime" },
 ];
 
 const services = [
   {
     code: "SYSTEM_01",
     title: "Window Replacement",
-    desc: "Full-frame extraction and high-performance replacement using structural silicone sealant technology.",
+    desc: "Full-frame and pocket window replacement using high-performance, energy-efficient glass built for the Bay Area climate.",
     img: gallery2,
   },
   {
     code: "SYSTEM_02",
-    title: "Door Installation",
-    desc: "Custom-pivot, French, and multi-slide entry systems with millimetric alignment for effortless operation.",
-    img: galleryDoor,
+    title: "Siding",
+    desc: "Durable, weather-tight siding that protects your home and transforms its exterior — installed by our own crews.",
+    img: gallery4,
   },
   {
     code: "SYSTEM_03",
-    title: "Energy Upgrades",
-    desc: "Triple-pane gas-filled conversions providing superior thermal isolation and Title-24 compliance.",
+    title: "Energy-Efficient Windows",
+    desc: "ENERGY STAR and Title-24 compliant windows that can lower heating and cooling costs by up to 30%.",
     img: galleryEnergy,
   },
 ];
 
 const process = [
-  { n: "01", t: "Consultation", d: "On-site assessment with a senior project consultant. Free, no-obligation." },
-  { n: "02", t: "Engineering", d: "Custom measurements, material selection, and energy modeling for your home." },
-  { n: "03", t: "Installation", d: "Certified crew, 14-point alignment protocol, full job-site protection." },
-  { n: "04", t: "Warranty", d: "Lifetime craftsmanship warranty backed by 22 years in the Bay Area." },
-];
-
-const testimonials = [
-  { name: "Margaret L.", city: "Atherton", quote: "The level of precision and the cleanliness of the install crew set a new standard for what I expect from contractors." },
-  { name: "David & Yuki K.", city: "Palo Alto", quote: "We replaced 18 windows. Energy bills dropped 34% the following winter. Worth every dollar." },
-  { name: "Sandra R.", city: "San Francisco", quote: "They restored our 1908 Victorian's bay windows with modern glazing. You'd never know they weren't original." },
+  { n: "01", t: "Consultation", d: "A free, no-obligation on-site assessment with a senior project consultant." },
+  { n: "02", t: "Measurement", d: "Precise custom measurements, material selection, and energy modeling for your home." },
+  { n: "03", t: "Installation", d: "Certified in-house crews, meticulous alignment, and full job-site protection." },
+  { n: "04", t: "Lifetime Warranty", d: `Every window backed by a full lifetime warranty from a company trusted since ${SITE.foundedYear}.` },
 ];
 
 const HomePage = () => {
@@ -63,13 +56,14 @@ const HomePage = () => {
               <div className="space-y-5">
                 <div className="flex items-center gap-3">
                   <span className="size-2 bg-primary rounded-full animate-pulse-soft" />
-                  <span className="eyebrow">Bay Area · Precision Glazing</span>
+                  <span className="eyebrow">San Francisco Bay Area · Since {SITE.foundedYear}</span>
                 </div>
                 <h1 className="text-5xl md:text-6xl xl:text-7xl font-light tracking-tighter leading-[0.95] text-balance">
-                  Engineering <span className="italic font-normal text-primary">transparency</span> for the modern home.
+                  Bay Area <span className="italic font-normal text-primary">window replacement</span> &amp; siding, since {SITE.foundedYear}.
                 </h1>
                 <p className="text-lg text-muted-foreground font-light leading-relaxed max-w-[52ch]">
-                  Specialized window and door installation for the Bay Area's most demanding homes. Performance-tested, masterfully installed, lifetime-warrantied.
+                  Golden State Windows has served over {SITE.homesServedLabel} Bay Area homes since {SITE.foundedYear} — expert
+                  window replacement, installation, and siding, with every window backed by a full lifetime warranty.
                 </p>
               </div>
 
@@ -103,9 +97,11 @@ const HomePage = () => {
               <div className="relative aspect-[4/5] bg-surface overflow-hidden group shadow-[0_30px_80px_-20px_hsl(0_0%_0%/0.6)]">
                 <img
                   src={heroImg}
-                  alt="Modern Bay Area home with floor-to-ceiling architectural windows at twilight"
+                  alt="Energy-efficient window replacement in a modern San Francisco Bay Area home"
                   width={1080}
                   height={1350}
+                  fetchPriority="high"
+                  decoding="async"
                   className="w-full h-full object-cover transition-transform duration-[1500ms] group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent opacity-70" />
@@ -115,7 +111,7 @@ const HomePage = () => {
                       <div className="size-1.5 bg-primary rounded-full animate-pulse-soft" />
                     </div>
                     <div className="text-[10px] uppercase tracking-[0.2em] text-foreground/80">
-                      Atherton Modern Residence · 2024
+                      Bay Area Window Replacement
                     </div>
                   </div>
                 </div>
@@ -130,9 +126,9 @@ const HomePage = () => {
         <div className="container-tight py-14 lg:py-20 space-y-16">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 border-b border-white/5 pb-12">
             <div className="max-w-xl space-y-4">
-              <span className="eyebrow">Installation Matrix</span>
+              <span className="eyebrow">What We Do</span>
               <h2 className="text-4xl md:text-5xl font-light tracking-tight">
-                Three core disciplines.<br />
+                Windows, siding, and energy upgrades.<br />
                 <span className="text-muted-foreground">One uncompromising standard.</span>
               </h2>
             </div>
@@ -156,7 +152,7 @@ const HomePage = () => {
                 <div className="aspect-[4/3] bg-surface mb-8 overflow-hidden">
                   <img
                     src={s.img}
-                    alt={s.title}
+                    alt={`${s.title} services in the San Francisco Bay Area`}
                     width={1280}
                     height={960}
                     loading="lazy"
@@ -174,7 +170,7 @@ const HomePage = () => {
                     to="/services"
                     className="text-[10px] uppercase tracking-[0.3em] font-bold text-muted-foreground group-hover:text-primary transition-colors flex items-center gap-2"
                   >
-                    Analyze Specs <ArrowRight className="size-3" />
+                    Learn More <span className="sr-only">about {s.title}</span> <ArrowRight className="size-3" />
                   </Link>
                 </div>
               </div>
@@ -192,15 +188,16 @@ const HomePage = () => {
               The standard the Bay Area demands.
             </h2>
             <p className="mt-6 text-muted-foreground leading-relaxed">
-              For 22 years we've installed in the region's most challenging environments — coastal salt air, fault-zone seismic codes, hillside microclimates. Every job is engineered, never assembled.
+              For over three decades we've installed in the region's most challenging environments — coastal salt air,
+              fault-zone seismic codes, and hillside microclimates. Every job is engineered, never assembled.
             </p>
           </div>
           <div className="lg:col-span-7 grid sm:grid-cols-2 gap-px bg-white/5">
             {[
-              { i: Shield, t: "Lifetime Warranty", d: "Craftsmanship guaranteed for as long as you own the home." },
-              { i: Award, t: "Title-24 Certified", d: "Every install meets or exceeds California energy standards." },
+              { i: Shield, t: "Lifetime Warranty", d: "Every window is backed by a full lifetime warranty, for as long as you own the home." },
+              { i: Award, t: "Title-24 Certified", d: "Every install meets or exceeds California's energy standards." },
               { i: Wrench, t: "In-House Crews", d: "We never subcontract. The team that quotes is the team that installs." },
-              { i: Leaf, t: "Energy Verified", d: "Average 28% reduction in heating and cooling costs post-install." },
+              { i: Leaf, t: "Energy Efficient", d: "ENERGY STAR windows that can cut heating and cooling costs by up to 30%." },
             ].map(({ i: Icon, t, d }) => (
               <div key={t} className="bg-background p-8 hover:bg-surface transition-colors">
                 <Icon className="size-6 text-primary mb-6" />
@@ -233,43 +230,52 @@ const HomePage = () => {
         </div>
       </section>
 
-      {/* TESTIMONIALS */}
+      {/* REVIEWS / SOCIAL PROOF */}
       <section className="container-tight py-14 lg:py-20">
-        <div className="flex items-end justify-between mb-16 gap-8">
-          <div>
-            <span className="eyebrow">Client Record</span>
-            <h2 className="mt-4 text-4xl md:text-5xl font-light tracking-tight">
-              Trusted across the peninsula.
-            </h2>
-          </div>
-          <div className="hidden md:flex items-center gap-1 text-primary">
-            {Array.from({ length: 5 }).map((_, i) => (
-              <Star key={i} className="size-4 fill-primary" />
-            ))}
-            <span className="ml-3 text-xs uppercase tracking-widest text-muted-foreground">
-              4.9 / 5 · 340+ Reviews
-            </span>
-          </div>
-        </div>
-        <div className="grid md:grid-cols-3 gap-px bg-white/5">
-          {testimonials.map((t) => (
-            <figure key={t.name} className="bg-background p-10 flex flex-col gap-8">
-              <div className="flex gap-1 text-primary">
-                {Array.from({ length: 5 }).map((_, i) => (
-                  <Star key={i} className="size-3.5 fill-primary" />
-                ))}
+        <div className="relative overflow-hidden bg-surface border border-white/5">
+          <div className="absolute inset-0 grid-bg opacity-20 pointer-events-none" />
+          <div className="relative grid lg:grid-cols-2 gap-12 p-12 lg:p-20 items-center">
+            <div className="space-y-6">
+              <span className="eyebrow">Client Record</span>
+              <h2 className="text-4xl md:text-5xl font-light tracking-tight leading-tight text-balance">
+                The highest-rated window company in the Bay Area.
+              </h2>
+              <p className="text-muted-foreground leading-relaxed">
+                Golden State Windows holds a {SITE.rating}-star rating across {SITE.reviewCount} {SITE.reviewPlatform} reviews —
+                the highest of any Bay Area window company — earned over {SITE.yearsBadge} years and {SITE.homesServedLabel} homes.
+              </p>
+              <div className="flex flex-wrap gap-4 pt-2">
+                <Button asChild variant="outline" size="lg">
+                  <a href={SITE.reviewsUrl} target="_blank" rel="noopener noreferrer">
+                    Read Reviews on {SITE.reviewPlatform} <ArrowRight className="size-4" />
+                  </a>
+                </Button>
               </div>
-              <blockquote className="text-base font-light leading-relaxed text-foreground/90">
-                "{t.quote}"
-              </blockquote>
-              <figcaption className="mt-auto pt-6 border-t border-white/5">
-                <div className="text-sm font-semibold">{t.name}</div>
-                <div className="text-[10px] uppercase tracking-[0.2em] text-muted-foreground mt-1">
-                  {t.city}
+            </div>
+            <div className="lg:pl-12 lg:border-l border-white/10">
+              <div className="flex items-center gap-4 mb-6">
+                <div className="text-6xl font-light tracking-tighter text-primary">{SITE.rating}</div>
+                <div>
+                  <div className="flex gap-1 text-primary mb-1">
+                    {Array.from({ length: 5 }).map((_, i) => (
+                      <Star key={i} className="size-4 fill-primary" />
+                    ))}
+                  </div>
+                  <div className="text-xs uppercase tracking-widest text-muted-foreground">
+                    {SITE.reviewCount} {SITE.reviewPlatform} reviews
+                  </div>
                 </div>
-              </figcaption>
-            </figure>
-          ))}
+              </div>
+              <ul className="space-y-3">
+                {["Highest Yelp rating of any Bay Area window company", `Over ${SITE.homesServedLabel} homes serviced`, "Full lifetime warranty on every window"].map((b) => (
+                  <li key={b} className="flex items-start gap-3 text-sm">
+                    <Check className="size-4 text-primary mt-0.5 shrink-0" />
+                    <span className="text-foreground/80">{b}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -282,14 +288,14 @@ const HomePage = () => {
             <div className="space-y-6">
               <span className="eyebrow">Begin a Project</span>
               <h2 className="text-4xl md:text-5xl font-light tracking-tight leading-tight text-balance">
-                Schedule your no-obligation consultation.
+                Schedule your free window consultation.
               </h2>
               <p className="text-muted-foreground leading-relaxed">
-                A senior consultant will visit your home, assess your goals, and provide a transparent itemized estimate within 48 hours.
+                A senior consultant will visit your home, assess your goals, and provide a transparent itemized estimate.
               </p>
             </div>
             <div className="space-y-4 lg:pl-12 lg:border-l border-white/10">
-              {["No high-pressure sales", "Fixed-price guarantee", "Same-week scheduling available"].map((b) => (
+              {["No high-pressure sales", "Free, no-obligation estimate", "Same-week scheduling available"].map((b) => (
                 <div key={b} className="flex items-center gap-4">
                   <div className="size-8 rounded-full bg-primary/10 border border-primary/30 flex items-center justify-center">
                     <Check className="size-4 text-primary" />

@@ -2,17 +2,18 @@ import { Link } from "react-router-dom";
 import { ArrowRight, Check } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { PageHeader } from "@/components/site/PageHeader";
+import { SITE } from "@/lib/site";
 import gallery2 from "@/assets/gallery-2.jpg";
+import gallery4 from "@/assets/gallery-4.jpg";
 import door from "@/assets/services-door.jpg";
 import energy from "@/assets/services-energy.jpg";
-import gallery1 from "@/assets/gallery-1.jpg";
 
 const services = [
   {
     code: "01",
     title: "Window Replacement",
     img: gallery2,
-    desc: "Full-frame and pocket replacements using structural silicone sealant technology. We work with vinyl, fiberglass, aluminum, and clad-wood systems from the industry's most respected manufacturers.",
+    desc: "Full-frame and pocket window replacement using structural silicone sealant technology. We work with vinyl, fiberglass, aluminum, and clad-wood systems from the industry's most respected manufacturers.",
     bullets: [
       "Casement, double-hung, awning, picture, and bay configurations",
       "Custom sizing — never off-the-shelf compromises",
@@ -22,38 +23,38 @@ const services = [
   },
   {
     code: "02",
-    title: "Door Installation",
-    img: door,
-    desc: "Entry, patio, and interior systems engineered for security, thermal performance, and silent operation. Our door specialists are certified on every major hardware platform.",
+    title: "Siding",
+    img: gallery4,
+    desc: "Durable, weather-tight siding that protects your home from the Bay Area's coastal climate and transforms its exterior. Installed by our own crews to the same standard as our window work.",
     bullets: [
-      "Pivot, French, sliding, and multi-slide pocket doors",
-      "Multi-point locking and smart-lock integration",
-      "Solid-core timber, fiberglass, and steel construction",
-      "ADA-compliant thresholds available",
+      "Fiber-cement, engineered wood, and vinyl siding systems",
+      "Moisture barriers and proper flashing at every penetration",
+      "Color-matched trim and finish carpentry",
+      "Coordinated with window replacement for a seamless exterior",
     ],
   },
   {
     code: "03",
-    title: "Energy Efficient Upgrades",
+    title: "Energy-Efficient Windows",
     img: energy,
-    desc: "Triple-pane gas-filled conversions, advanced low-E coatings, and Title-24 compliance. Average client sees a 28% reduction in HVAC costs within the first year.",
+    desc: "Triple-pane, gas-filled, low-E glass conversions and Title-24 compliance. Energy-efficient windows can lower heating and cooling costs by up to 30% while keeping your home quieter and more comfortable.",
     bullets: [
-      "ENERGY STAR Most Efficient certification",
+      "ENERGY STAR Most Efficient certified products",
       "PG&E rebate paperwork handled in-house",
-      "Custom solar gain modeling for your microclimate",
-      "Lifetime seal-failure warranty",
+      "Custom solar-gain modeling for your microclimate",
+      "Full lifetime warranty on every window",
     ],
   },
   {
     code: "04",
-    title: "Custom Architectural Glazing",
-    img: gallery1,
-    desc: "For new construction and major remodels. Floor-to-ceiling walls of glass, structural skylights, and curved glazing engineered to your architect's specifications.",
+    title: "Door Installation",
+    img: door,
+    desc: "Entry, patio, and sliding door systems engineered for security, thermal performance, and smooth, silent operation. Our door specialists are certified on every major hardware platform.",
     bullets: [
-      "Direct collaboration with architects and GCs",
-      "Hurricane and seismic-rated systems",
-      "Acoustic glazing for high-traffic locations",
-      "Concierge project management",
+      "Patio, French, sliding, and multi-slide pocket doors",
+      "Multi-point locking and smart-lock integration",
+      "Solid-core timber, fiberglass, and steel construction",
+      "ADA-compliant thresholds available",
     ],
   },
 ];
@@ -64,8 +65,8 @@ const ServicesPage = () => {
       <PageHeader
         eyebrow="Capabilities"
         index="01 / SERVICES"
-        title={<>Engineered systems for <span className="italic font-normal text-primary">every</span> opening.</>}
-        description="From single-window replacements to full architectural glazing packages, every project is approached with the same engineering rigor."
+        title={<>Window replacement, siding &amp; <span className="italic font-normal text-primary">energy</span> upgrades.</>}
+        description={`From single-window replacements to full siding packages, every project across the ${SITE.serviceAreaLabel} is approached with the same engineering rigor — and backed by a full lifetime warranty.`}
       />
 
       <section className="container-tight py-14">
@@ -81,7 +82,7 @@ const ServicesPage = () => {
                 <div className="aspect-[4/3] bg-surface overflow-hidden group">
                   <img
                     src={s.img}
-                    alt={s.title}
+                    alt={`${s.title} in the San Francisco Bay Area by Golden State Windows`}
                     width={1280}
                     height={960}
                     loading="lazy"
