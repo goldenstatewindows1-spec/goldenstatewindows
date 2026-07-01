@@ -43,6 +43,3 @@ CLAUDE.local.md
 *.njsproj
 *.sln
 *.sw?
-
-# vite-react-ssg build temp
-.vite-react-ssg-temp/

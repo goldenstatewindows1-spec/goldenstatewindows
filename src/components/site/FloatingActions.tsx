@@ -5,7 +5,7 @@ import { cn } from "@/lib/utils";
 import { SITE } from "@/lib/site";
 
 /** Fixed call button (always visible, animated) + scroll-to-top (appears on scroll). */
-export const FloatingActions = () => {
+export const FloatingActions = ({ bannerVisible }: { bannerVisible: boolean }) => {
   const [showTop, setShowTop] = useState(false);
   const lenis = useLenis();
 
@@ -29,8 +29,12 @@ export const FloatingActions = () => {
   };
 
   return (
-    <div className="fixed right-4 md:right-6 bottom-6 z-40 flex flex-col items-center gap-3">
-
+    <div
+      className={cn(
+        "fixed right-4 md:right-6 z-40 flex flex-col items-center gap-3 transition-[bottom] duration-300",
+        bannerVisible ? "bottom-44 md:bottom-6" : "bottom-6"
+      )}
+    >
       {/* Scroll to top — fades in after scrolling down */}
       <button
         type="button"
