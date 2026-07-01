@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Golden State Windows — Precision Engineering design system.
+   Dark-mode-only. All colors HSL. */
+
+@layer base {
+  :root {
+    /* Brand palette */
+    --background: 240 6% 4%;          /* obsidian */
+    --foreground: 210 40% 98%;        /* glacier */
+
+    --surface: 240 4% 10%;            /* graphite */
+    --surface-elevated: 240 4% 13%;
+
+    --card: 240 4% 10%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 240 6% 6%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 217 91% 60%;           /* steel blue */
+    --primary-foreground: 240 6% 4%;
+    --primary-glow: 213 94% 68%;
+
+    --secondary: 240 4% 13%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 240 4% 13%;
+    --muted-foreground: 210 16% 65%;
+
+    --accent: 217 91% 60%;
+    --accent-foreground: 240 6% 4%;
+
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 0 0% 100% / 0.06;
+    --border-strong: 0 0% 100% / 0.12;
+    --input: 240 4% 13%;
+    --ring: 217 91% 60%;
+
+    --radius: 0.25rem;
+
+    /* Gradients & effects */
+    --gradient-hero: radial-gradient(ellipse 80% 60% at 50% 0%, hsl(217 91% 60% / 0.12), transparent 70%);
+    --gradient-fade: linear-gradient(180deg, transparent, hsl(240 6% 4%));
+    --grid-pattern: radial-gradient(circle at 2px 2px, hsl(217 91% 60% / 0.18) 1px, transparent 0);
+
+    --shadow-elevated: 0 30px 60px -20px hsl(0 0% 0% / 0.6);
+    --shadow-glow: 0 0 60px hsl(217 91% 60% / 0.25);
+
+    --transition-base: 300ms cubic-bezier(0.4, 0, 0.2, 1);
+
+    --sidebar-background: 240 6% 4%;
+    --sidebar-foreground: 210 40% 98%;
+    --sidebar-primary: 217 91% 60%;
+    --sidebar-primary-foreground: 240 6% 4%;
+    --sidebar-accent: 240 4% 13%;
+    --sidebar-accent-foreground: 210 40% 98%;
+    --sidebar-border: 240 4% 13%;
+    --sidebar-ring: 217 91% 60%;
+  }
+
+  .dark {
+    /* Same — site is dark-only */
+    --background: 240 6% 4%;
+    --foreground: 210 40% 98%;
+  }
+}
+
+@layer base {
+  * {
+    border-color: hsl(255 255 255 / 0.06);
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Outfit', system-ui, sans-serif;
+    font-feature-settings: 'ss01', 'cv11';
+  }
+
+  ::selection {
+    background: hsl(var(--primary) / 0.3);
+    color: hsl(var(--foreground));
+  }
+}
+
+@layer components {
+  .container-tight {
+    @apply max-w-7xl mx-auto px-6 md:px-10;
+  }
+
+  .eyebrow {
+    @apply text-xs font-semibold uppercase tracking-[0.3em] text-primary;
+  }
+
+  .technical-mono {
+    font-family: 'JetBrains Mono', ui-monospace, monospace;
+    font-variant-numeric: tabular-nums;
+    letter-spacing: -0.02em;
+  }
+
+  .grid-bg {
+    background-image: var(--grid-pattern);
+    background-size: 48px 48px;
+  }
+
+  .border-hairline {
+    border-color: hsl(0 0% 100% / 0.06);
+  }
+}
