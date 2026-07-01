@@ -2,36 +2,35 @@
 
 > The San Francisco Bay Area's largest and most trusted window replacement, installation, and siding company since 1989. Over 8,000 homes serviced, rated 4.8/5 across 393 Yelp reviews (the highest of any Bay Area window company), with a full lifetime warranty on every window.
 
-## About
-
-Golden State Windows is a family-run, licensed, bonded, and insured contractor serving the San Francisco Bay Area since 1989. Work is performed by 100% in-house crews (no subcontractors) and every window is backed by a full lifetime warranty. Free, no-obligation consultations are available.
-
-## Services
-
-- **Window Replacement** — Full-frame and pocket window replacement in vinyl, fiberglass, aluminum, and clad-wood.
-- **Siding** — Fiber-cement, engineered wood, and vinyl siding, coordinated with window work.
-- **Energy-Efficient Windows** — ENERGY STAR and Title-24 compliant windows that can lower heating and cooling costs by up to 30%.
-- **Door Installation** — Entry, patio, French, and sliding door systems.
-
-## Key facts
-
-- Founded: 1989
-- Homes serviced: 8,000+
-- Rating: 4.8 / 5 from 393 Yelp reviews (highest of any Bay Area window company)
-- Warranty: Full lifetime warranty on every window
-- Phone: (800) 748-6448
-- Address: 1517 Palmette Ave, Pacifica, CA 94044
-- Hours: Monday–Saturday, 10:00 AM – 8:00 PM
-- Service area: San Francisco Bay Area — Pacifica, Daly City, South San Francisco, San Bruno, Millbrae, Burlingame, San Mateo, Redwood City, San Francisco, Palo Alto, Mountain View, San Jose, Fremont, Oakland, Berkeley, and Marin County.
+Golden State Windows is a family-run, licensed, bonded, and insured contractor serving the San Francisco Bay Area since 1989. All work is performed by 100% in-house crews (no subcontractors). Free, no-obligation consultations are available at (800) 748-6448.
 
 ## Pages
 
-- Home: https://goldenstatewindows.com/
-- Services: https://goldenstatewindows.com/services
-- Gallery: https://goldenstatewindows.com/gallery
-- About: https://goldenstatewindows.com/about
-- Contact & Free Quote: https://goldenstatewindows.com/contact
+- [Home](https://goldenstatewindows.com/): Company overview, services, and reviews
+- [Services](https://goldenstatewindows.com/services): Window replacement, siding, energy-efficient windows, and door installation
+- [Gallery](https://goldenstatewindows.com/gallery): Selected Bay Area window, siding, and door projects
+- [About](https://goldenstatewindows.com/about): History since 1989 and service-area coverage
+- [Contact](https://goldenstatewindows.com/contact): Request a free consultation — (800) 748-6448
 
-## Contact
+## Services
 
-Call (800) 748-6448 or request a free consultation at https://goldenstatewindows.com/contact
+- [Window Replacement](https://goldenstatewindows.com/services): Full-frame and pocket replacement in vinyl, fiberglass, aluminum, and clad-wood
+- [Siding](https://goldenstatewindows.com/services): Fiber-cement, engineered wood, and vinyl siding
+- [Energy-Efficient Windows](https://goldenstatewindows.com/services): ENERGY STAR and Title-24 compliant windows that can lower heating and cooling costs by up to 30%
+- [Door Installation](https://goldenstatewindows.com/services): Entry, patio, French, and sliding door systems
+
+## Reviews
+
+- [Yelp profile](https://www.yelp.com/biz/golden-state-windows-pacifica): 4.8 out of 5 across 393 reviews — the highest-rated window company in the Bay Area
+
+## Key facts
+
+- Founded: 1989 — over three decades in business
+- Homes serviced: 8,000+
+- Rating: 4.8 / 5 from 393 Yelp reviews
+- Warranty: Full lifetime warranty on every window
+- Phone: (800) 748-6448
+- Email: info@goldenstatewindows.com
+- Address: 1517 Palmette Ave, Pacifica, CA 94044
+- Hours: Monday–Saturday 10:00 AM – 8:00 PM; Sunday 10:00 AM – 5:00 PM
+- Service area: San Francisco Bay Area — Pacifica, Daly City, South San Francisco, San Bruno, Millbrae, Burlingame, San Mateo, Redwood City, San Francisco, Palo Alto, Mountain View, San Jose, Fremont, Oakland, Berkeley, and Marin County
