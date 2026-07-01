@@ -21,15 +21,20 @@ const router = createBrowserRouter(
   [
     {
       element: <SiteLayout />,
-      errorElement: <RouteError />,
       children: [
-        { path: "/", element: <Home /> },
-        { path: "/services", element: <Services /> },
-        { path: "/gallery", element: <Gallery /> },
-        { path: "/about", element: <About /> },
-        { path: "/contact", element: <Contact /> },
-        { path: "/privacy", element: <Privacy /> },
-        { path: "*", element: <NotFound /> },
+        {
+          // Pathless route so an error renders inside the layout (Navbar/Footer stay).
+          errorElement: <RouteError />,
+          children: [
+            { path: "/", element: <Home /> },
+            { path: "/services", element: <Services /> },
+            { path: "/gallery", element: <Gallery /> },
+            { path: "/about", element: <About /> },
+            { path: "/contact", element: <Contact /> },
+            { path: "/privacy", element: <Privacy /> },
+            { path: "*", element: <NotFound /> },
+          ],
+        },
       ],
     },
   ],

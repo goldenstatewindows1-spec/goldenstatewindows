@@ -19,7 +19,7 @@ interface SeoProps {
  * statically in index.html so non-JS social scrapers still get a share card.
  */
 export const Seo = ({ title, description, path, noindex, jsonLd }: SeoProps) => {
-  const canonical = `${base}${path === "/" ? "" : path}`;
+  const canonical = `${base}${path === "/" ? "/" : path}`;
   const blocks = jsonLd ? (Array.isArray(jsonLd) ? jsonLd : [jsonLd]) : [];
 
   return (
@@ -27,6 +27,8 @@ export const Seo = ({ title, description, path, noindex, jsonLd }: SeoProps) => 
       <title>{title}</title>
       <meta name="description" content={description} />
       <link rel="canonical" href={canonical} />
+      {/* Per-route og:url matches the canonical; brand og/twitter title+image are static in index.html. */}
+      <meta property="og:url" content={canonical} />
       {noindex && <meta name="robots" content="noindex, nofollow" />}
       {blocks.map((block, i) => (
         <script key={i} type="application/ld+json">{JSON.stringify(block)}</script>

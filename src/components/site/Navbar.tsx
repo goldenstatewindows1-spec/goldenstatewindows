@@ -29,6 +29,20 @@ export const Navbar = () => {
     setOpen(false);
   }, [location.pathname]);
 
+  // Close the mobile menu on Escape and lock body scroll while it's open.
+  useEffect(() => {
+    if (!open) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setOpen(false);
+    };
+    document.addEventListener("keydown", onKey);
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.removeEventListener("keydown", onKey);
+      document.body.style.overflow = "";
+    };
+  }, [open]);
+
   return (
     <header
       className={cn(
@@ -86,7 +100,7 @@ export const Navbar = () => {
           </Button>
           <button
             onClick={() => setOpen((o) => !o)}
-            className="lg:hidden size-10 flex items-center justify-center border border-white/10"
+            className="lg:hidden size-11 flex items-center justify-center border border-white/10"
             aria-label={open ? "Close menu" : "Open menu"}
             aria-expanded={open}
             aria-controls="mobile-nav"

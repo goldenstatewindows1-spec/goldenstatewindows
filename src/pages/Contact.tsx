@@ -9,7 +9,6 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-import { useToast } from "@/hooks/use-toast";
 import { supabase } from "@/lib/supabase";
 import { SITE } from "@/lib/site";
 import { Seo } from "@/components/site/Seo";
@@ -53,17 +52,16 @@ const leadSchema = z.object({
   city: z.string().trim().min(2, "Please enter your city").max(120),
   projectType: z.string().min(1, "Please select a project type"),
   message: z.string().trim().max(4000).optional(),
-  // Honeypot — must stay empty. Bots that auto-fill it are silently dropped.
-  company: z.string().max(0).optional(),
+  // Honeypot — must stay empty. A filled value signals a bot; handled in onSubmit.
+  company: z.string().optional(),
 });
 
 type LeadForm = z.infer<typeof leadSchema>;
 
 const fieldError = "text-xs text-destructive mt-1.5";
-const inputBase = "bg-background border-white/20 h-12";
+const inputBase = "bg-background border-white/40 h-12";
 
 const ContactPage = () => {
-  const { toast } = useToast();
   const {
     register,
     handleSubmit,
@@ -105,10 +103,6 @@ const ContactPage = () => {
     }
 
     reset();
-    toast({
-      title: "Quote request received",
-      description: "A senior consultant will be in touch within one business day.",
-    });
   };
 
   return (
@@ -143,6 +137,9 @@ const ContactPage = () => {
                   Thank you. A senior consultant will be in touch within one business day. Need to reach us sooner?{" "}
                   <a href={SITE.phoneHref} className="text-primary hover:underline">{SITE.phone}</a>.
                 </p>
+                <div className="mt-6">
+                  <Button variant="outline" onClick={() => reset()}>Send another request</Button>
+                </div>
               </div>
             ) : (
               <form onSubmit={handleSubmit(onSubmit)} noValidate className="space-y-6">
@@ -251,7 +248,7 @@ const ContactPage = () => {
                     rows={5}
                     maxLength={4000}
                     placeholder="Approximate number of openings, timeline, anything we should know…"
-                    className="bg-background border-white/20"
+                    className="bg-background border-white/40"
                     {...register("message")}
                   />
                 </div>

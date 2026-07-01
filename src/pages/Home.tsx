@@ -252,7 +252,7 @@ const HomePage = () => {
               </h2>
               <p className="text-muted-foreground leading-relaxed">
                 Golden State Windows holds a {SITE.rating}-star rating across {SITE.reviewCount} {SITE.reviewPlatform} reviews —
-                the highest of any Bay Area window company — earned over {SITE.yearsBadge} years and {SITE.homesServedLabel} homes.
+                the highest of any Bay Area window company — earned over {SITE.yearsInBusiness} years and {SITE.homesServedLabel} homes.
               </p>
               <div className="flex flex-wrap gap-4 pt-2">
                 <Button asChild variant="outline" size="lg">

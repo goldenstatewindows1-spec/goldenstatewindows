@@ -1,5 +1,6 @@
 import { Link, useRouteError, isRouteErrorResponse } from "react-router-dom";
 import { Button } from "@/components/ui/button";
+import { SITE } from "@/lib/site";
 
 /** Route-level error boundary: renders a branded fallback instead of a blank page. */
 export const RouteError = () => {
@@ -18,7 +19,7 @@ export const RouteError = () => {
         </p>
         <div className="mt-10 flex flex-wrap gap-4">
           <Button asChild size="lg"><Link to="/">Return Home</Link></Button>
-          <Button asChild variant="outline" size="lg"><a href="tel:+18007486448">Call Us</a></Button>
+          <Button asChild variant="outline" size="lg"><a href={SITE.phoneHref}>Call Us</a></Button>
         </div>
       </div>
     </section>
