@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useForm, Controller } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
@@ -13,7 +13,7 @@ import { supabase } from "@/lib/supabase";
 import { SITE } from "@/lib/site";
 import { Seo } from "@/components/site/Seo";
 import { breadcrumbLd } from "@/lib/jsonld";
-import { Mail, Phone, MapPin, Clock, Check } from "lucide-react";
+import { Mail, Phone, MapPin, Clock } from "lucide-react";
 
 const faqs = [
   { q: "How long does a typical window installation take?", a: "Most full-home replacements are completed in 2–5 days depending on the number of openings. We'll provide a precise timeline in your itemized estimate." },
@@ -62,13 +62,13 @@ const fieldError = "text-xs text-destructive mt-1.5";
 const inputBase = "bg-background border-white/40 h-12";
 
 const ContactPage = () => {
+  const navigate = useNavigate();
   const {
     register,
     handleSubmit,
     control,
-    reset,
     setError,
-    formState: { errors, isSubmitting, isSubmitSuccessful },
+    formState: { errors, isSubmitting },
   } = useForm<LeadForm>({
     resolver: zodResolver(leadSchema),
     defaultValues: { name: "", phone: "", email: "", city: "", projectType: "", message: "", company: "" },
@@ -102,7 +102,7 @@ const ContactPage = () => {
       return;
     }
 
-    reset();
+    navigate("/thank-you");
   };
 
   return (
@@ -127,21 +127,6 @@ const ContactPage = () => {
             <span className="eyebrow">Request Form</span>
             <h2 className="mt-3 text-3xl font-light tracking-tight mb-8">Tell us about your project</h2>
 
-            {isSubmitSuccessful ? (
-              <div className="border border-primary/30 bg-primary/5 p-8 text-center" role="status">
-                <div className="size-12 rounded-full bg-primary/10 border border-primary/30 flex items-center justify-center mx-auto mb-5">
-                  <Check className="size-6 text-primary" />
-                </div>
-                <h3 className="text-xl font-light mb-2">Request received</h3>
-                <p className="text-sm text-muted-foreground max-w-sm mx-auto">
-                  Thank you. A senior consultant will be in touch within one business day. Need to reach us sooner?{" "}
-                  <a href={SITE.phoneHref} className="text-primary hover:underline">{SITE.phone}</a>.
-                </p>
-                <div className="mt-6">
-                  <Button variant="outline" onClick={() => reset()}>Send another request</Button>
-                </div>
-              </div>
-            ) : (
               <form onSubmit={handleSubmit(onSubmit)} noValidate className="space-y-6">
                 {/* Honeypot: hidden from users, tempting to bots */}
                 <div className="hidden" aria-hidden="true">
@@ -267,7 +252,6 @@ const ContactPage = () => {
                   </p>
                 </div>
               </form>
-            )}
           </div>
         </div>
 
