@@ -37,12 +37,28 @@ const server = createServer(async (req, res) => {
   }
 });
 
-let puppeteer;
-try {
-  puppeteer = (await import("puppeteer")).default;
-} catch {
-  console.warn("[prerender] puppeteer unavailable — keeping CSR build.");
-  process.exit(0);
+// Acquire a headless browser. In serverless build envs (Vercel/Lambda) a normal
+// Chromium can't launch — the container lacks the shared libs it needs
+// (libnspr4.so etc.). There we use @sparticuz/chromium, a Chromium build that
+// bundles those libs; locally we use the full puppeteer (bundled Chromium).
+const isServerless = !!(process.env.VERCEL || process.env.AWS_LAMBDA_FUNCTION_NAME || process.env.NETLIFY);
+
+async function launchBrowser() {
+  if (isServerless) {
+    const chromium = (await import("@sparticuz/chromium")).default;
+    const puppeteerCore = (await import("puppeteer-core")).default;
+    chromium.setGraphicsMode = false; // no GPU/WebGL needed for HTML snapshots
+    return puppeteerCore.launch({
+      args: [...chromium.args, "--no-sandbox", "--disable-setuid-sandbox"],
+      executablePath: await chromium.executablePath(),
+      headless: chromium.headless,
+    });
+  }
+  const puppeteer = (await import("puppeteer")).default;
+  return puppeteer.launch({
+    headless: true,
+    args: ["--no-sandbox", "--disable-setuid-sandbox", "--disable-gpu"],
+  });
 }
 
 await new Promise((resolve) => server.listen(PORT, resolve));
@@ -50,10 +66,7 @@ await new Promise((resolve) => server.listen(PORT, resolve));
 let browser;
 let ok = 0;
 try {
-  browser = await puppeteer.launch({
-    headless: true,
-    args: ["--no-sandbox", "--disable-setuid-sandbox", "--disable-gpu"],
-  });
+  browser = await launchBrowser();
 
   for (const route of ROUTES) {
     const page = await browser.newPage();
