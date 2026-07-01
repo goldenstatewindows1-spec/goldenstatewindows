@@ -18,7 +18,7 @@ export const SITE = {
   // Contact
   phone: "(800) 748-6448",
   phoneHref: "tel:+18007486448",
-  email: "info@goldenstatewindows.com", // TODO: confirm the real, monitored inbox
+  email: "info@goldenstatewindows.com",
   emailHref: "mailto:info@goldenstatewindows.com",
 
   // Address (keep NAP identical everywhere it appears)
@@ -43,19 +43,24 @@ export const SITE = {
   rating: 4.8,
   reviewCount: 393,
   reviewPlatform: "Yelp",
-  reviewsUrl: "https://www.yelp.com/biz/golden-state-windows-pacifica", // TODO: confirm exact Yelp URL
+  reviewsUrl: "https://www.yelp.com/biz/golden-state-windows-pacifica",
 
   // Credentials
   license: "Licensed, Bonded & Insured",
   licenseNumber: "", // TODO: add the real CSLB license number when provided
 
   // Hours
-  hours: "Mon–Sat · 10:00 AM – 8:00 PM", // TODO: confirm exact open days
+  hours: "Mon–Sat 10AM–8PM · Sun 10AM–5PM",
   hoursSchema: [
     {
       days: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
       opens: "10:00",
       closes: "20:00",
+    },
+    {
+      days: ["Sunday"],
+      opens: "10:00",
+      closes: "17:00",
     },
   ],
 
@@ -82,11 +87,12 @@ export const SITE = {
 
   // External profiles (used for JSON-LD sameAs and review links)
   social: {
-    yelp: "https://www.yelp.com/biz/golden-state-windows-pacifica", // TODO: confirm
+    yelp: "https://www.yelp.com/biz/golden-state-windows-pacifica",
+    // TODO: add facebook / instagram URLs if the business has them
   },
 
   // Canonical production URL (used for SEO canonicals, sitemap, JSON-LD)
-  url: "https://goldenstatewindows.com", // TODO: confirm the production domain
+  url: "https://goldenstatewindows.com",
 };
 
 export type SiteData = typeof SITE;
