@@ -89,7 +89,7 @@
 
   body {
     @apply bg-background text-foreground antialiased;
-    font-family: 'Outfit', system-ui, sans-serif;
+    font-family: 'Outfit Variable', system-ui, sans-serif;
     font-feature-settings: 'ss01', 'cv11';
   }
 

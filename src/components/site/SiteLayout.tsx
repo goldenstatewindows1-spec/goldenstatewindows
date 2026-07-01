@@ -20,16 +20,15 @@ const ScrollReset = () => {
 };
 
 export const SiteLayout = () => {
-  const [cookieOpen, setCookieOpen] = useState(false);
-
-  // Show the banner only if no choice has been stored yet (runs after mount → SSG-safe).
-  useEffect(() => {
+  // Initialize synchronously so the floating buttons don't reposition after mount (avoids CLS).
+  const [cookieOpen, setCookieOpen] = useState(() => {
+    if (typeof window === "undefined") return false;
     try {
-      if (!localStorage.getItem(CONSENT_KEY)) setCookieOpen(true);
+      return !localStorage.getItem(CONSENT_KEY);
     } catch {
-      /* localStorage unavailable (private mode) — skip the banner */
+      return false;
     }
-  }, []);
+  });
 
   const decide = (value: "accepted" | "declined") => {
     try {

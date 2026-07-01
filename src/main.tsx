@@ -3,6 +3,7 @@ import { HelmetProvider } from "react-helmet-async";
 import { ReactLenis } from "lenis/react";
 import App from "./App.tsx";
 import "lenis/dist/lenis.css";
+import "@fontsource-variable/outfit";
 import "./index.css";
 
 const tree = (
