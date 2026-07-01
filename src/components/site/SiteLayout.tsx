@@ -1,9 +1,33 @@
-import { Suspense } from "react";
+import { Suspense, useEffect, useState } from "react";
 import { Outlet, ScrollRestoration } from "react-router-dom";
 import { Navbar } from "./Navbar";
 import { Footer } from "./Footer";
+import { FloatingActions } from "./FloatingActions";
+import { CookieBanner } from "./CookieBanner";
+
+const CONSENT_KEY = "gsw-cookie-consent";
 
 export const SiteLayout = () => {
+  const [cookieOpen, setCookieOpen] = useState(false);
+
+  // Show the banner only if no choice has been stored yet (runs after mount → SSG-safe).
+  useEffect(() => {
+    try {
+      if (!localStorage.getItem(CONSENT_KEY)) setCookieOpen(true);
+    } catch {
+      /* localStorage unavailable (private mode) — skip the banner */
+    }
+  }, []);
+
+  const decide = (value: "accepted" | "declined") => {
+    try {
+      localStorage.setItem(CONSENT_KEY, value);
+    } catch {
+      /* ignore storage errors */
+    }
+    setCookieOpen(false);
+  };
+
   return (
     <div className="min-h-dvh flex flex-col bg-background">
       <a
@@ -20,6 +44,14 @@ export const SiteLayout = () => {
       </main>
       <Footer />
       <ScrollRestoration />
+
+      <FloatingActions bannerVisible={cookieOpen} />
+      {cookieOpen && (
+        <CookieBanner
+          onAccept={() => decide("accepted")}
+          onDecline={() => decide("declined")}
+        />
+      )}
     </div>
   );
 };

@@ -197,3 +197,20 @@
 .gsw-pop {
   animation: gsw-pop 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
 }
+
+/* Floating call button — periodic "ringing" wiggle of the phone icon. */
+@keyframes gsw-wiggle {
+  0%, 82%, 100% {
+    transform: rotate(0deg);
+  }
+  86%, 94% {
+    transform: rotate(-14deg);
+  }
+  90%, 98% {
+    transform: rotate(14deg);
+  }
+}
+.gsw-wiggle {
+  animation: gsw-wiggle 2.8s ease-in-out infinite;
+  transform-origin: 50% 55%;
+}
