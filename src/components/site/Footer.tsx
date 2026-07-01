@@ -105,7 +105,10 @@ export const Footer = () => {
 
         <div className="mt-16 pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4 text-[10px] uppercase tracking-[0.3em] text-muted-foreground">
           <p>© {new Date().getFullYear()} {SITE.name}. All rights reserved.</p>
-          <p>Designed & Engineered in the Bay Area</p>
+          <div className="flex items-center gap-6">
+            <Link to="/privacy" className="hover:text-foreground transition-colors">Privacy Policy</Link>
+            <span>San Francisco Bay Area</span>
+          </div>
         </div>
       </div>
     </footer>

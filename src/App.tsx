@@ -5,12 +5,14 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { SiteLayout } from "@/components/site/SiteLayout";
+import { RouteError } from "@/components/site/RouteError";
 
 const Home = lazy(() => import("./pages/Home"));
 const Services = lazy(() => import("./pages/Services"));
 const Gallery = lazy(() => import("./pages/Gallery"));
 const About = lazy(() => import("./pages/About"));
 const Contact = lazy(() => import("./pages/Contact"));
+const Privacy = lazy(() => import("./pages/Privacy"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 
 const queryClient = new QueryClient();
@@ -19,12 +21,14 @@ const router = createBrowserRouter(
   [
     {
       element: <SiteLayout />,
+      errorElement: <RouteError />,
       children: [
         { path: "/", element: <Home /> },
         { path: "/services", element: <Services /> },
         { path: "/gallery", element: <Gallery /> },
         { path: "/about", element: <About /> },
         { path: "/contact", element: <Contact /> },
+        { path: "/privacy", element: <Privacy /> },
         { path: "*", element: <NotFound /> },
       ],
     },

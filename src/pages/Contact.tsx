@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { useForm, Controller } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
@@ -264,7 +265,8 @@ const ContactPage = () => {
                     {isSubmitting ? "Sending…" : "Request Consultation"}
                   </Button>
                   <p className="mt-4 text-[11px] text-muted-foreground">
-                    We respect your privacy. No spam, no shared data. Response within one business day.
+                    We respect your privacy — your details are only used to respond to your request. See our{" "}
+                    <Link to="/privacy" className="text-primary hover:underline">Privacy Policy</Link>.
                   </p>
                 </div>
               </form>
