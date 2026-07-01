@@ -1,18 +1,32 @@
 import { useEffect, useState } from "react";
 import { Phone, ArrowUp } from "lucide-react";
+import { useLenis } from "lenis/react";
 import { cn } from "@/lib/utils";
 import { SITE } from "@/lib/site";
 
 /** Fixed call button (always visible, animated) + scroll-to-top (appears on scroll). */
 export const FloatingActions = ({ bannerVisible }: { bannerVisible: boolean }) => {
   const [showTop, setShowTop] = useState(false);
+  const lenis = useLenis();
 
   useEffect(() => {
-    const onScroll = () => setShowTop(window.scrollY > 500);
-    onScroll();
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
+    const update = (y: number) => setShowTop(y > 500);
+    if (lenis) {
+      const onScroll = () => update(lenis.scroll);
+      lenis.on("scroll", onScroll);
+      update(lenis.scroll);
+      return () => lenis.off("scroll", onScroll);
+    }
+    const onWin = () => update(window.scrollY);
+    onWin();
+    window.addEventListener("scroll", onWin, { passive: true });
+    return () => window.removeEventListener("scroll", onWin);
+  }, [lenis]);
+
+  const scrollToTop = () => {
+    if (lenis) lenis.scrollTo(0, { duration: 1.1 });
+    else window.scrollTo({ top: 0, behavior: "smooth" });
+  };
 
   return (
     <div
@@ -24,7 +38,7 @@ export const FloatingActions = ({ bannerVisible }: { bannerVisible: boolean }) =
       {/* Scroll to top — fades in after scrolling down */}
       <button
         type="button"
-        onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+        onClick={scrollToTop}
         aria-label="Scroll to top"
         className={cn(
           "size-11 rounded-full bg-surface border border-white/15 flex items-center justify-center text-foreground hover:text-primary hover:border-primary/50 transition-all duration-300",

@@ -1,11 +1,23 @@
 import { Suspense, useEffect, useState } from "react";
-import { Outlet, ScrollRestoration } from "react-router-dom";
+import { Outlet, useLocation } from "react-router-dom";
+import { useLenis } from "lenis/react";
 import { Navbar } from "./Navbar";
 import { Footer } from "./Footer";
 import { FloatingActions } from "./FloatingActions";
 import { CookieBanner } from "./CookieBanner";
 
 const CONSENT_KEY = "gsw-cookie-consent";
+
+// Scroll to top on every route change (via Lenis when active, else native).
+const ScrollReset = () => {
+  const { pathname } = useLocation();
+  const lenis = useLenis();
+  useEffect(() => {
+    if (lenis) lenis.scrollTo(0, { immediate: true });
+    else window.scrollTo(0, 0);
+  }, [pathname, lenis]);
+  return null;
+};
 
 export const SiteLayout = () => {
   const [cookieOpen, setCookieOpen] = useState(false);
@@ -43,7 +55,7 @@ export const SiteLayout = () => {
         </Suspense>
       </main>
       <Footer />
-      <ScrollRestoration />
+      <ScrollReset />
 
       <FloatingActions bannerVisible={cookieOpen} />
       {cookieOpen && (
