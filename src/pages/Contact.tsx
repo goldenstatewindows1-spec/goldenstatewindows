@@ -12,6 +12,7 @@ import { useToast } from "@/hooks/use-toast";
 import { supabase } from "@/lib/supabase";
 import { SITE } from "@/lib/site";
 import { Seo } from "@/components/site/Seo";
+import { breadcrumbLd } from "@/lib/jsonld";
 import { Mail, Phone, MapPin, Clock, Check } from "lucide-react";
 
 const faqs = [
@@ -115,7 +116,7 @@ const ContactPage = () => {
         title="Free Quote & Consultation | Golden State Windows | (800) 748-6448"
         description="Request a free window, siding, or door consultation from Golden State Windows. Serving the San Francisco Bay Area since 1989. Call (800) 748-6448."
         path="/contact"
-        jsonLd={faqJsonLd}
+        jsonLd={[faqJsonLd, breadcrumbLd("Contact", "/contact")]}
       />
       <PageHeader
         eyebrow="Begin a Project"

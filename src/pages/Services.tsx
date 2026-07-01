@@ -3,6 +3,7 @@ import { ArrowRight, Check } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { PageHeader } from "@/components/site/PageHeader";
 import { Seo } from "@/components/site/Seo";
+import { breadcrumbLd } from "@/lib/jsonld";
 import { SITE } from "@/lib/site";
 import gallery2 from "@/assets/gallery-2.jpg";
 import gallery4 from "@/assets/gallery-4.jpg";
@@ -67,6 +68,7 @@ const ServicesPage = () => {
         title="Window Replacement, Siding & Doors in the Bay Area | Golden State Windows"
         description="Expert window replacement, siding, energy-efficient windows, and door installation across the San Francisco Bay Area. Backed by a full lifetime warranty. Free consultation."
         path="/services"
+        jsonLd={breadcrumbLd("Services", "/services")}
       />
       <PageHeader
         eyebrow="Capabilities"
