@@ -112,7 +112,7 @@ const HomePage = () => {
                   width={1080}
                   height={1350}
                   decoding="async"
-                  className="w-full h-full object-cover transition-transform duration-[1500ms] group-hover:scale-105"
+                  className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent opacity-70" />
                 <div className="absolute bottom-8 left-8 right-8 flex items-end justify-between">

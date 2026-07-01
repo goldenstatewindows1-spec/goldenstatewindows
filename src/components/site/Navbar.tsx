@@ -87,7 +87,9 @@ export const Navbar = () => {
           <button
             onClick={() => setOpen((o) => !o)}
             className="lg:hidden size-10 flex items-center justify-center border border-white/10"
-            aria-label="Toggle menu"
+            aria-label={open ? "Close menu" : "Open menu"}
+            aria-expanded={open}
+            aria-controls="mobile-nav"
           >
             {open ? <X className="size-4" /> : <Menu className="size-4" />}
           </button>
@@ -95,7 +97,7 @@ export const Navbar = () => {
       </div>
 
       {open && (
-        <div className="lg:hidden border-t border-white/5 bg-background/95 backdrop-blur-xl animate-fade-in">
+        <div id="mobile-nav" className="lg:hidden border-t border-white/5 bg-background/95 backdrop-blur-xl animate-fade-in">
           <nav className="container-tight py-6 flex flex-col gap-1">
             {links.map((l) => (
               <NavLink
