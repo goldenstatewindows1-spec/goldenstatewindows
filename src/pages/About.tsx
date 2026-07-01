@@ -5,7 +5,10 @@ import { breadcrumbLd } from "@/lib/jsonld";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { SITE } from "@/lib/site";
+import { SERVICE_AREAS } from "@/lib/serviceAreas";
 import hero from "@/assets/hero-window.jpg";
+
+const AREA_SLUG = new Map(SERVICE_AREAS.map((a) => [a.name, a.slug]));
 
 const stats = [
   { v: `Since ${SITE.foundedYear}`, l: "In Business" },
@@ -95,14 +98,24 @@ const AboutPage = () => {
           <span className="eyebrow">Coverage</span>
           <h2 className="mt-4 text-3xl md:text-4xl font-light tracking-tight mb-8">Where we work.</h2>
           <div className="flex flex-wrap gap-3">
-            {SITE.serviceAreas.map((a) => (
-              <span key={a} className="px-4 py-2 border border-white/10 text-sm text-foreground/80 hover:border-primary/40 hover:text-primary transition-colors cursor-default">
-                {a}
-              </span>
-            ))}
+            {SITE.serviceAreas.map((a) => {
+              const slug = AREA_SLUG.get(a);
+              const cls =
+                "px-4 py-2 border border-white/10 text-sm text-foreground/80 hover:border-primary/40 hover:text-primary transition-colors";
+              return slug ? (
+                <Link key={a} to={`/service-areas/${slug}`} className={cls}>
+                  {a}
+                </Link>
+              ) : (
+                <span key={a} className={`${cls} cursor-default`}>
+                  {a}
+                </span>
+              );
+            })}
           </div>
-          <div className="mt-10">
+          <div className="mt-10 flex flex-wrap gap-4">
             <Button asChild><Link to="/contact">Request a Free Quote</Link></Button>
+            <Button asChild variant="outline"><Link to="/service-areas">Browse Service Areas</Link></Button>
           </div>
         </div>
       </section>

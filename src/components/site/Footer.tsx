@@ -1,6 +1,10 @@
 import { Link } from "react-router-dom";
 import { SITE } from "@/lib/site";
+import { SERVICE_AREAS } from "@/lib/serviceAreas";
 import { Mail, Phone, MapPin } from "lucide-react";
+
+// Map a service-area city name → its landing-page slug (only cities with a page).
+const AREA_SLUG = new Map(SERVICE_AREAS.map((a) => [a.name, a.slug]));
 
 export const Footer = () => {
   return (
@@ -70,11 +74,34 @@ export const Footer = () => {
           </div>
 
           <div className="md:col-span-3">
-            <h4 className="eyebrow mb-5">Service Areas</h4>
+            <h4 className="eyebrow mb-5">
+              <Link to="/service-areas" className="hover:text-foreground transition-colors">
+                Service Areas
+              </Link>
+            </h4>
             <ul className="space-y-2 text-sm text-muted-foreground">
-              {SITE.serviceAreas.slice(0, 8).map((area) => (
-                <li key={area}>{area}</li>
-              ))}
+              {SITE.serviceAreas.slice(0, 8).map((area) => {
+                const slug = AREA_SLUG.get(area);
+                return (
+                  <li key={area}>
+                    {slug ? (
+                      <Link
+                        to={`/service-areas/${slug}`}
+                        className="hover:text-foreground transition-colors"
+                      >
+                        {area}
+                      </Link>
+                    ) : (
+                      area
+                    )}
+                  </li>
+                );
+              })}
+              <li>
+                <Link to="/service-areas" className="text-primary hover:text-foreground transition-colors">
+                  All areas →
+                </Link>
+              </li>
             </ul>
           </div>
 

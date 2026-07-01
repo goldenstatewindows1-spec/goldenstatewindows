@@ -10,7 +10,16 @@ import { join, extname, dirname } from "node:path";
 
 const DIST = "dist";
 const PORT = 4183;
-const ROUTES = ["/", "/services", "/gallery", "/about", "/contact", "/thank-you", "/privacy", "/cookies"];
+const ROUTES = [
+  "/", "/services", "/gallery", "/about", "/contact", "/thank-you", "/privacy", "/cookies",
+  "/service-areas",
+  "/service-areas/pacifica",
+  "/service-areas/daly-city",
+  "/service-areas/south-san-francisco",
+  "/service-areas/san-mateo",
+  "/service-areas/san-bruno",
+  "/service-areas/burlingame",
+];
 
 const MIME = {
   ".html": "text/html; charset=utf-8", ".js": "text/javascript", ".mjs": "text/javascript",
