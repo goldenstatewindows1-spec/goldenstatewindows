@@ -1,6 +1,7 @@
 import { Link, useLocation } from "react-router-dom";
 import { useEffect } from "react";
 import { Button } from "@/components/ui/button";
+import { Seo } from "@/components/site/Seo";
 
 const NotFound = () => {
   const location = useLocation();
@@ -10,7 +11,14 @@ const NotFound = () => {
   }, [location.pathname]);
 
   return (
-    <section className="container-tight min-h-[70vh] flex items-center">
+    <>
+      <Seo
+        title="Page Not Found | Golden State Windows"
+        description="The page you're looking for doesn't exist. Return to Golden State Windows — Bay Area window replacement and siding."
+        path="/404"
+        noindex
+      />
+      <section className="container-tight min-h-[70vh] flex items-center">
       <div className="max-w-xl">
         <span className="eyebrow">Error 404</span>
         <h1 className="mt-4 text-6xl md:text-7xl font-light tracking-tighter">Page not found.</h1>
@@ -22,6 +30,7 @@ const NotFound = () => {
         </div>
       </div>
     </section>
+    </>
   );
 };
 

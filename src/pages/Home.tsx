@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 import { ArrowRight, Check, Phone, Shield, Award, Wrench, Leaf, Star } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Seo } from "@/components/site/Seo";
 import { SITE } from "@/lib/site";
 import heroImg from "@/assets/hero-window.jpg";
 import galleryEnergy from "@/assets/services-energy.jpg";
@@ -45,6 +47,15 @@ const process = [
 const HomePage = () => {
   return (
     <>
+      <Seo
+        title="Golden State Windows | Bay Area Window Replacement & Siding Since 1989"
+        description="Golden State Windows is the San Francisco Bay Area's largest and most trusted window replacement, installation, and siding company. 8,000+ homes since 1989, 4.8★ on Yelp, full lifetime warranty. Free consultation: (800) 748-6448."
+        path="/"
+      />
+      <Helmet>
+        {/* Preload the LCP hero image so the browser fetches it before React mounts. */}
+        <link rel="preload" as="image" href={heroImg} />
+      </Helmet>
       {/* HERO */}
       <section className="relative overflow-hidden">
         <div className="absolute inset-0 grid-bg opacity-25 pointer-events-none" />
@@ -100,7 +111,6 @@ const HomePage = () => {
                   alt="Energy-efficient window replacement in a modern San Francisco Bay Area home"
                   width={1080}
                   height={1350}
-                  fetchPriority="high"
                   decoding="async"
                   className="w-full h-full object-cover transition-transform duration-[1500ms] group-hover:scale-105"
                 />

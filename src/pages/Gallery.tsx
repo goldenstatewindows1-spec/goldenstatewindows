@@ -1,4 +1,5 @@
 import { PageHeader } from "@/components/site/PageHeader";
+import { Seo } from "@/components/site/Seo";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { SITE } from "@/lib/site";
@@ -21,6 +22,11 @@ const projects = [
 const GalleryPage = () => {
   return (
     <>
+      <Seo
+        title="Project Gallery | Bay Area Window & Siding Work | Golden State Windows"
+        description="See window replacement, siding, and door projects from the 8,000+ Bay Area homes Golden State Windows has serviced since 1989."
+        path="/gallery"
+      />
       <PageHeader
         eyebrow="Selected Work"
         index="02 / PORTFOLIO"

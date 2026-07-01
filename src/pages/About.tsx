@@ -1,4 +1,5 @@
 import { PageHeader } from "@/components/site/PageHeader";
+import { Seo } from "@/components/site/Seo";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { SITE } from "@/lib/site";
@@ -20,6 +21,11 @@ const values = [
 const AboutPage = () => {
   return (
     <>
+      <Seo
+        title="About Golden State Windows | Bay Area Window Company Since 1989"
+        description="Since 1989, Golden State Windows has been the Bay Area's most trusted window and siding company — 8,000+ homes, 100% in-house crews, and a full lifetime warranty."
+        path="/about"
+      />
       <PageHeader
         eyebrow="About"
         index="03 / FIRM"

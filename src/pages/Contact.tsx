@@ -11,6 +11,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import { useToast } from "@/hooks/use-toast";
 import { supabase } from "@/lib/supabase";
 import { SITE } from "@/lib/site";
+import { Seo } from "@/components/site/Seo";
 import { Mail, Phone, MapPin, Clock, Check } from "lucide-react";
 
 const faqs = [
@@ -20,6 +21,16 @@ const faqs = [
   { q: "Do you offer financing?", a: "Yes — we offer flexible financing options. Ask your consultant about current plans and terms at your free consultation." },
   { q: "Are you licensed and insured?", a: `Yes. ${SITE.license}, with full workers' comp coverage. Documentation is available on request.` },
 ];
+
+const faqJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqs.map((f) => ({
+    "@type": "Question",
+    name: f.q,
+    acceptedAnswer: { "@type": "Answer", text: f.a },
+  })),
+};
 
 const projectTypes = [
   { value: "windows", label: "Window Replacement" },
@@ -100,6 +111,12 @@ const ContactPage = () => {
 
   return (
     <>
+      <Seo
+        title="Free Quote & Consultation | Golden State Windows | (800) 748-6448"
+        description="Request a free window, siding, or door consultation from Golden State Windows. Serving the San Francisco Bay Area since 1989. Call (800) 748-6448."
+        path="/contact"
+        jsonLd={faqJsonLd}
+      />
       <PageHeader
         eyebrow="Begin a Project"
         index="04 / CONTACT"
