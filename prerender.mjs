@@ -1,8 +1,13 @@
 // Snapshot prerender: after `vite build`, render each static route in a headless
 // browser and save the fully-rendered HTML into dist/. The app itself is NOT
 // changed (it stays a normal CSR SPA) — this only adds static HTML for crawlers
-// and AI bots. If a headless browser isn't available, it falls back to the CSR
-// build (exit 0) so a deploy is never broken by this step.
+// and AI bots. Also renders dist/404.html so Vercel serves unknown URLs with a
+// real 404 status (vercel.json has no SPA rewrite; routing is filesystem-based).
+//
+// IMPORTANT: because there is no SPA fallback rewrite, a build without these
+// snapshot files would break direct loads of inner routes. So if prerendering
+// fails, we FAIL THE BUILD (exit 1) — on Vercel the previous deployment simply
+// stays live, which is safer than shipping a broken one.
 import { createServer } from "node:http";
 import { readFile, writeFile, mkdir, stat } from "node:fs/promises";
 import { existsSync } from "node:fs";
@@ -20,6 +25,9 @@ const ROUTES = [
   "/service-areas/san-bruno",
   "/service-areas/burlingame",
 ];
+// Any unmatched path renders the NotFound page; Vercel serves dist/404.html
+// with HTTP 404 for URLs that don't match a file.
+const NOT_FOUND_ROUTE = "/404";
 
 const MIME = {
   ".html": "text/html; charset=utf-8", ".js": "text/javascript", ".mjs": "text/javascript",
@@ -30,6 +38,8 @@ const MIME = {
 };
 
 // Static server for dist with directory-index and SPA fallback to index.html.
+// Snapshots are written only AFTER all routes render, so every render starts
+// from the clean CSR shell (never from another route's snapshot).
 const server = createServer(async (req, res) => {
   try {
     const urlPath = decodeURIComponent((req.url || "/").split("?")[0]);
@@ -73,11 +83,20 @@ async function launchBrowser() {
 await new Promise((resolve) => server.listen(PORT, resolve));
 
 let browser;
-let ok = 0;
+let failed = false;
 try {
   browser = await launchBrowser();
 
-  for (const route of ROUTES) {
+  const jobs = [
+    ...ROUTES.map((route) => ({
+      route,
+      outPath: route === "/" ? join(DIST, "index.html") : join(DIST, route, "index.html"),
+    })),
+    { route: NOT_FOUND_ROUTE, outPath: join(DIST, "404.html") },
+  ];
+
+  const outputs = [];
+  for (const { route, outPath } of jobs) {
     const page = await browser.newPage();
     // Don't capture the cookie banner (client-only) in the static snapshot.
     await page.evaluateOnNewDocument(() => {
@@ -85,22 +104,33 @@ try {
     });
     await page.goto(`http://localhost:${PORT}${route}`, { waitUntil: "networkidle2", timeout: 45000 });
     await page.waitForSelector("#root h1, #root main", { timeout: 20000 });
-    // Freeze animations so content is captured at its final state, then let helmet flush.
-    await page.addStyleTag({ content: "*,*::before,*::after{animation:none!important;transition:none!important}" });
+    // Freeze animations so the DOM settles, then REMOVE the style tag before
+    // serializing — otherwise it ships in the HTML and kills all animations
+    // for real visitors.
+    const freeze = await page.addStyleTag({
+      content: "*,*::before,*::after{animation:none!important;transition:none!important}",
+    });
     await new Promise((r) => setTimeout(r, 150));
+    await freeze.evaluate((el) => el.remove());
 
     const html = await page.content();
-    const outPath = route === "/" ? join(DIST, "index.html") : join(DIST, route, "index.html");
-    await mkdir(dirname(outPath), { recursive: true });
-    await writeFile(outPath, html);
-    console.log(`[prerender] ${route.padEnd(12)} -> ${outPath} (${(html.length / 1024).toFixed(1)} KiB)`);
-    ok++;
+    outputs.push({ route, outPath, html });
     await page.close();
   }
-  console.log(`[prerender] done: ${ok}/${ROUTES.length} routes.`);
+
+  // All rendered from the clean shell — now persist.
+  for (const { route, outPath, html } of outputs) {
+    await mkdir(dirname(outPath), { recursive: true });
+    await writeFile(outPath, html);
+    console.log(`[prerender] ${route.padEnd(36)} -> ${outPath} (${(html.length / 1024).toFixed(1)} KiB)`);
+  }
+  console.log(`[prerender] done: ${outputs.length}/${jobs.length} pages.`);
 } catch (e) {
-  console.warn(`[prerender] failed after ${ok} routes, keeping CSR build:`, e.message);
+  failed = true;
+  console.error("[prerender] FAILED — failing the build (no SPA rewrite fallback exists):", e.message);
 } finally {
   if (browser) await browser.close();
   server.close();
 }
+
+if (failed) process.exit(1);
