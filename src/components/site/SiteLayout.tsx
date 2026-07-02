@@ -5,6 +5,7 @@ import { Navbar } from "./Navbar";
 import { Footer } from "./Footer";
 import { FloatingActions } from "./FloatingActions";
 import { CookieBanner } from "./CookieBanner";
+import { setAnalyticsConsent } from "@/lib/analytics";
 
 const CONSENT_KEY = "gsw-cookie-consent";
 
@@ -36,6 +37,7 @@ export const SiteLayout = () => {
     } catch {
       /* ignore storage errors */
     }
+    setAnalyticsConsent(value === "accepted");
     setCookieOpen(false);
   };
 

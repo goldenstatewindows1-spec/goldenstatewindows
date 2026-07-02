@@ -2,9 +2,12 @@ import { createRoot } from "react-dom/client";
 import { HelmetProvider } from "react-helmet-async";
 import { ReactLenis } from "lenis/react";
 import App from "./App.tsx";
+import { initAnalytics } from "./lib/analytics";
 import "lenis/dist/lenis.css";
 import "@fontsource-variable/outfit";
 import "./index.css";
+
+initAnalytics();
 
 const tree = (
   <HelmetProvider>

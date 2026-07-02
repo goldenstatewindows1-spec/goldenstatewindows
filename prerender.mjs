@@ -98,6 +98,14 @@ try {
   const outputs = [];
   for (const { route, outPath } of jobs) {
     const page = await browser.newPage();
+    // Keep build renders out of Google Analytics (and networkidle2 fast).
+    await page.setRequestInterception(true);
+    page.on("request", (req) => {
+      if (/googletagmanager\.com|google-analytics\.com|analytics\.google\.com/.test(req.url())) {
+        return req.abort();
+      }
+      return req.continue();
+    });
     // Don't capture the cookie banner (client-only) in the static snapshot.
     await page.evaluateOnNewDocument(() => {
       try { localStorage.setItem("gsw-cookie-consent", "accepted"); } catch (e) { /* noop */ }

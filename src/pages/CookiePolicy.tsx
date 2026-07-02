@@ -13,7 +13,7 @@ const sections = [
   {
     h: "How we use them",
     p: [
-      "We keep our use of cookies to a minimum. We use strictly necessary and functional storage to make the site work and to remember your cookie choice so we don't ask again on every visit.",
+      "We keep our use of cookies to a minimum. We use strictly necessary and functional storage to make the site work and to remember your cookie choice so we don't ask again on every visit, plus Google Analytics to understand aggregate site traffic.",
       "We do not use cookies to build advertising profiles or to sell your data.",
     ],
   },
@@ -22,7 +22,7 @@ const sections = [
     list: [
       "Strictly necessary — required for the site to function and to remember your cookie-consent choice.",
       "Functional — remember basic preferences to improve your experience.",
-      "Analytics — if enabled, these help us understand aggregate, anonymous traffic (which pages are visited) so we can improve the site. These are only set with your consent.",
+      "Analytics — Google Analytics 4 (cookies such as _ga and _ga_*) helps us understand aggregate traffic — which pages are visited and how visitors move through the site — so we can improve it. Choosing “Decline” in the cookie banner turns analytics off; advertising features stay disabled either way.",
     ],
   },
   {
@@ -34,7 +34,7 @@ const sections = [
   {
     h: "Third-party services",
     p: [
-      "This site is hosted on Vercel and uses Supabase to receive contact-form submissions. These providers may set strictly necessary cookies or process limited technical data to deliver the service. We do not currently run third-party advertising trackers.",
+      "This site is hosted on Vercel and uses Supabase to receive contact-form submissions. These providers may set strictly necessary cookies or process limited technical data to deliver the service. We use Google Analytics 4 for aggregate traffic measurement (see above); you can opt out at any time. We do not run third-party advertising trackers.",
     ],
   },
   {
@@ -62,7 +62,7 @@ const CookiePolicyPage = () => {
       />
 
       <section className="container-tight py-14 max-w-3xl">
-        <p className="text-sm text-muted-foreground mb-12">Last updated: July 1, 2026</p>
+        <p className="text-sm text-muted-foreground mb-12">Last updated: July 2, 2026</p>
         <div className="space-y-12">
           {sections.map((s) => (
             <div key={s.h}>
