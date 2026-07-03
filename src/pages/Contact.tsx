@@ -20,7 +20,7 @@ const faqs = [
   { q: "Do you handle permits?", a: "Yes. All city and county permitting is handled in-house at no additional charge. We're familiar with every Bay Area municipality's requirements." },
   { q: "What's the warranty?", a: "A full lifetime warranty on every window we install, transferable to a new owner. Manufacturer warranties on materials range from 20 years to lifetime depending on the product." },
   { q: "Do you offer financing?", a: "Yes — we offer flexible financing options. Ask your consultant about current plans and terms at your free consultation." },
-  { q: "Are you licensed and insured?", a: `Yes. ${SITE.license}, with full workers' comp coverage. Documentation is available on request.` },
+  { q: "Are you licensed and insured?", a: `Yes. ${SITE.license} — California CSLB License #${SITE.licenseNumber} — with full workers' comp coverage. Documentation is available on request.` },
 ];
 
 const faqJsonLd = {
@@ -302,6 +302,10 @@ const ContactPage = () => {
           <div>
             <span className="eyebrow">Credentials</span>
             <div className="mt-6 space-y-3 text-sm">
+              <div className="flex justify-between border-b border-white/5 pb-3">
+                <span className="text-muted-foreground">CSLB License</span>
+                <span className="technical-mono">#{SITE.licenseNumber}</span>
+              </div>
               <div className="flex justify-between border-b border-white/5 pb-3">
                 <span className="text-muted-foreground">Warranty</span>
                 <span className="technical-mono">Lifetime</span>

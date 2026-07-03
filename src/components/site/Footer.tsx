@@ -110,6 +110,12 @@ export const Footer = () => {
             <ul className="space-y-3 text-sm text-muted-foreground">
               <li>
                 <span className="block text-[10px] uppercase tracking-widest text-primary mb-0.5">
+                  CSLB License
+                </span>
+                #{SITE.licenseNumber}
+              </li>
+              <li>
+                <span className="block text-[10px] uppercase tracking-widest text-primary mb-0.5">
                   Warranty
                 </span>
                 {SITE.warranty}

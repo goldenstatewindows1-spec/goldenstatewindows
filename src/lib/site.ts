@@ -47,7 +47,7 @@ export const SITE = {
 
   // Credentials
   license: "Licensed, Bonded & Insured",
-  licenseNumber: "", // TODO: add the real CSLB license number when provided
+  licenseNumber: "972301", // California CSLB
 
   // Hours
   hours: "Mon–Sat 10AM–8PM · Sun 10AM–5PM",
