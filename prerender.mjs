@@ -24,6 +24,7 @@ const ROUTES = [
   "/service-areas/san-mateo",
   "/service-areas/san-bruno",
   "/service-areas/burlingame",
+  "/reviews",
 ];
 // Any unmatched path renders the NotFound page; Vercel serves dist/404.html
 // with HTTP 404 for URLs that don't match a file.
@@ -98,10 +99,12 @@ try {
   const outputs = [];
   for (const { route, outPath } of jobs) {
     const page = await browser.newPage();
-    // Keep build renders out of Google Analytics (and networkidle2 fast).
+    // Keep build renders out of Google Analytics, and don't load third-party
+    // embeds (Facebook video iframes) during prerender — the iframe tags still
+    // ship in the snapshot; this only keeps networkidle2 fast and deterministic.
     await page.setRequestInterception(true);
     page.on("request", (req) => {
-      if (/googletagmanager\.com|google-analytics\.com|analytics\.google\.com/.test(req.url())) {
+      if (/googletagmanager\.com|google-analytics\.com|analytics\.google\.com|facebook\.com|facebook\.net|fbcdn\.net/.test(req.url())) {
         return req.abort();
       }
       return req.continue();

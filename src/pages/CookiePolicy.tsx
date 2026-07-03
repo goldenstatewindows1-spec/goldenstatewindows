@@ -34,7 +34,7 @@ const sections = [
   {
     h: "Third-party services",
     p: [
-      "This site is hosted on Vercel and uses Supabase to receive contact-form submissions. These providers may set strictly necessary cookies or process limited technical data to deliver the service. We use Google Analytics 4 for aggregate traffic measurement (see above); you can opt out at any time. We do not run third-party advertising trackers.",
+      "This site is hosted on Vercel and uses Supabase to receive contact-form submissions. These providers may set strictly necessary cookies or process limited technical data to deliver the service. We use Google Analytics 4 for aggregate traffic measurement (see above); you can opt out at any time. Our Reviews page embeds client video testimonials hosted on Facebook — when you view or play these videos, Facebook may set its own cookies under its own policies. We do not run third-party advertising trackers.",
     ],
   },
   {
@@ -62,7 +62,7 @@ const CookiePolicyPage = () => {
       />
 
       <section className="container-tight py-14 max-w-3xl">
-        <p className="text-sm text-muted-foreground mb-12">Last updated: July 2, 2026</p>
+        <p className="text-sm text-muted-foreground mb-12">Last updated: July 3, 2026</p>
         <div className="space-y-12">
           {sections.map((s) => (
             <div key={s.h}>

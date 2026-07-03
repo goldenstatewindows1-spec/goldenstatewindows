@@ -248,6 +248,11 @@ const HomePage = () => {
                 the highest of any Bay Area window company — earned over {SITE.yearsInBusiness} years and {SITE.homesServedLabel} homes.
               </p>
               <div className="flex flex-wrap gap-4 pt-2">
+                <Button asChild size="lg">
+                  <Link to="/reviews">
+                    Watch Video Reviews <ArrowRight className="size-4" />
+                  </Link>
+                </Button>
                 <Button asChild variant="outline" size="lg">
                   <a href={SITE.reviewsUrl} target="_blank" rel="noopener noreferrer">
                     Read Reviews on {SITE.reviewPlatform} <ArrowRight className="size-4" />

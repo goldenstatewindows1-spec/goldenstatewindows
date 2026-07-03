@@ -13,6 +13,7 @@ const Gallery = lazy(() => import("./pages/Gallery"));
 const About = lazy(() => import("./pages/About"));
 const ServiceAreas = lazy(() => import("./pages/ServiceAreas"));
 const ServiceArea = lazy(() => import("./pages/ServiceArea"));
+const Reviews = lazy(() => import("./pages/Reviews"));
 const Contact = lazy(() => import("./pages/Contact"));
 const ThankYou = lazy(() => import("./pages/ThankYou"));
 const Privacy = lazy(() => import("./pages/Privacy"));
@@ -36,6 +37,7 @@ const router = createBrowserRouter(
             { path: "/about", element: <About /> },
             { path: "/service-areas", element: <ServiceAreas /> },
             { path: "/service-areas/:city", element: <ServiceArea /> },
+            { path: "/reviews", element: <Reviews /> },
             { path: "/contact", element: <Contact /> },
             { path: "/thank-you", element: <ThankYou /> },
             { path: "/privacy", element: <Privacy /> },

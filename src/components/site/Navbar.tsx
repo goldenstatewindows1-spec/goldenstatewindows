@@ -11,6 +11,7 @@ const links = [
   { to: "/gallery", label: "Portfolio" },
   { to: "/about", label: "About" },
   { to: "/service-areas", label: "Areas" },
+  { to: "/reviews", label: "Reviews" },
   { to: "/contact", label: "Contact" },
 ];
 

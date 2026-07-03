@@ -50,7 +50,7 @@ export const Footer = () => {
           <div className="md:col-span-2">
             <h4 className="eyebrow mb-5">Navigate</h4>
             <ul className="space-y-3 text-sm">
-              {["Home", "Services", "Portfolio", "About", "Contact"].map(
+              {["Home", "Services", "Portfolio", "About", "Reviews", "Contact"].map(
                 (label) => {
                   const to =
                     label === "Home"
