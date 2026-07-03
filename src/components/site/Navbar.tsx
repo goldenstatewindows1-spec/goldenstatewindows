@@ -1,10 +1,11 @@
 import { Link, NavLink, useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { Menu, X, Phone, Mail, ArrowRight, Star } from "lucide-react";
+import { Menu, X, Phone, Mail, ArrowRight, Star, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { SITE } from "@/lib/site";
 import { cn } from "@/lib/utils";
 
+// Mobile menu keeps the flat list (vertical space is plentiful there).
 const links = [
   { to: "/", label: "Home" },
   { to: "/services", label: "Services" },
@@ -15,10 +16,36 @@ const links = [
   { to: "/contact", label: "Contact" },
 ];
 
+// Desktop nav groups About / Service Areas / Reviews under one dropdown to
+// keep the bar compact.
+const desktopBefore = [
+  { to: "/", label: "Home" },
+  { to: "/services", label: "Services" },
+  { to: "/gallery", label: "Portfolio" },
+];
+const aboutMenu = [
+  { to: "/about", label: "About Us", desc: "Our story & standards since 1989" },
+  { to: "/service-areas", label: "Service Areas", desc: "Peninsula & Bay Area cities we serve" },
+  { to: "/reviews", label: "Reviews", desc: "Video testimonials & our Yelp record" },
+];
+const desktopAfter = [{ to: "/contact", label: "Contact" }];
+
+const navItemClass = (isActive: boolean) =>
+  cn(
+    "text-xs font-semibold uppercase tracking-[0.2em] transition-colors",
+    isActive ? "text-primary" : "text-muted-foreground hover:text-foreground",
+  );
+
 export const Navbar = () => {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
+
+  // Highlight the "About" trigger when any of its grouped pages is open.
+  const aboutGroupActive = aboutMenu.some(
+    (item) =>
+      location.pathname === item.to || location.pathname.startsWith(`${item.to}/`),
+  );
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 8);
@@ -71,19 +98,70 @@ export const Navbar = () => {
         </Link>
 
         <nav className="hidden lg:flex items-center gap-10">
-          {links.map((l) => (
+          {desktopBefore.map((l) => (
             <NavLink
               key={l.to}
               to={l.to}
               end={l.to === "/"}
-              className={({ isActive }) =>
-                cn(
-                  "text-xs font-semibold uppercase tracking-[0.2em] transition-colors",
-                  isActive
-                    ? "text-primary"
-                    : "text-muted-foreground hover:text-foreground"
-                )
-              }
+              className={({ isActive }) => navItemClass(isActive)}
+            >
+              {l.label}
+            </NavLink>
+          ))}
+
+          {/* About dropdown (opens on hover and on keyboard focus) */}
+          <div className="relative group">
+            <NavLink
+              to="/about"
+              className={cn(
+                navItemClass(aboutGroupActive),
+                "flex items-center gap-1.5",
+              )}
+              aria-haspopup="true"
+            >
+              About
+              <ChevronDown className="size-3 transition-transform duration-300 group-hover:rotate-180 group-focus-within:rotate-180" />
+            </NavLink>
+            <div
+              className={cn(
+                "absolute left-1/2 -translate-x-1/2 top-full pt-5 z-50",
+                "invisible opacity-0 translate-y-1 transition-all duration-200",
+                "group-hover:visible group-hover:opacity-100 group-hover:translate-y-0",
+                "group-focus-within:visible group-focus-within:opacity-100 group-focus-within:translate-y-0",
+              )}
+            >
+              <div className="w-72 bg-background border border-white/10 shadow-2xl">
+                <div className="h-0.5 bg-primary" />
+                <div className="p-2">
+                  {aboutMenu.map((item) => (
+                    <NavLink key={item.to} to={item.to} className="block px-4 py-3.5 hover:bg-white/5 transition-colors">
+                      {({ isActive }) => (
+                        <>
+                          <span
+                            className={cn(
+                              "block text-xs font-semibold uppercase tracking-[0.2em]",
+                              isActive ? "text-primary" : "text-foreground",
+                            )}
+                          >
+                            {item.label}
+                          </span>
+                          <span className="mt-1 block text-[11px] leading-relaxed text-muted-foreground">
+                            {item.desc}
+                          </span>
+                        </>
+                      )}
+                    </NavLink>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {desktopAfter.map((l) => (
+            <NavLink
+              key={l.to}
+              to={l.to}
+              className={({ isActive }) => navItemClass(isActive)}
             >
               {l.label}
             </NavLink>
