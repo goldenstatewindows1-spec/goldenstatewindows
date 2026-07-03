@@ -14,6 +14,7 @@ const About = lazy(() => import("./pages/About"));
 const ServiceAreas = lazy(() => import("./pages/ServiceAreas"));
 const ServiceArea = lazy(() => import("./pages/ServiceArea"));
 const Reviews = lazy(() => import("./pages/Reviews"));
+const Terms = lazy(() => import("./pages/Terms"));
 const Contact = lazy(() => import("./pages/Contact"));
 const ThankYou = lazy(() => import("./pages/ThankYou"));
 const Privacy = lazy(() => import("./pages/Privacy"));
@@ -41,6 +42,7 @@ const router = createBrowserRouter(
             { path: "/contact", element: <Contact /> },
             { path: "/thank-you", element: <ThankYou /> },
             { path: "/privacy", element: <Privacy /> },
+            { path: "/terms", element: <Terms /> },
             { path: "/cookies", element: <CookiePolicy /> },
             { path: "*", element: <NotFound /> },
           ],

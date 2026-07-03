@@ -25,6 +25,7 @@ const ROUTES = [
   "/service-areas/san-bruno",
   "/service-areas/burlingame",
   "/reviews",
+  "/terms",
 ];
 // Any unmatched path renders the NotFound page; Vercel serves dist/404.html
 // with HTTP 404 for URLs that don't match a file.

@@ -27,6 +27,7 @@ const aboutMenu = [
   { to: "/about", label: "About Us", desc: "Our story & standards since 1989" },
   { to: "/service-areas", label: "Service Areas", desc: "Peninsula & Bay Area cities we serve" },
   { to: "/reviews", label: "Reviews", desc: "Video testimonials & our Yelp record" },
+  { to: "/terms", label: "Terms of Use", desc: "Site terms & legal information" },
 ];
 const desktopAfter = [{ to: "/contact", label: "Contact" }];
 
@@ -271,6 +272,13 @@ export const Navbar = () => {
               <div className="text-center text-[11px] uppercase tracking-[0.15em] text-muted-foreground space-y-1.5 pt-2">
                 <div>{SITE.hours}</div>
                 <div>{SITE.address}</div>
+                <div className="flex items-center justify-center gap-3 pt-1 text-[10px]">
+                  <Link to="/privacy" className="hover:text-primary transition-colors">Privacy</Link>
+                  <span className="text-white/20">·</span>
+                  <Link to="/terms" className="hover:text-primary transition-colors">Terms</Link>
+                  <span className="text-white/20">·</span>
+                  <Link to="/cookies" className="hover:text-primary transition-colors">Cookies</Link>
+                </div>
               </div>
             </div>
           </div>

@@ -134,6 +134,7 @@ export const Footer = () => {
           <p>© {new Date().getFullYear()} {SITE.name}. All rights reserved.</p>
           <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2">
             <Link to="/privacy" className="hover:text-foreground transition-colors">Privacy Policy</Link>
+            <Link to="/terms" className="hover:text-foreground transition-colors">Terms of Use</Link>
             <Link to="/cookies" className="hover:text-foreground transition-colors">Cookie Policy</Link>
             <a
               href="https://alexeykachan.com/"
