@@ -1,3 +1,4 @@
+import { useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import { ArrowRight, Star, Check } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -5,6 +6,79 @@ import { PageHeader } from "@/components/site/PageHeader";
 import { Seo } from "@/components/site/Seo";
 import { breadcrumbLd } from "@/lib/jsonld";
 import { SITE } from "@/lib/site";
+
+// Trustindex widget (written Google & Yelp reviews). The standard one-line
+// <script> embed only works when the tag is in the initial HTML — in a React
+// app we use Trustindex's SPA path instead: fetch the widget markup, inject
+// it, then let the loader initialize the existing .ti-widget element
+// (Trustindex.initWidgetsFromDom).
+const TRUSTINDEX_ID = "e3172c77550679364406fbff46d";
+const TRUSTINDEX_CONTENT = `https://cdn.trustindex.io/widgets/${TRUSTINDEX_ID.slice(0, 2)}/${TRUSTINDEX_ID}/content.html`;
+const TRUSTINDEX_LOADER = "https://cdn.trustindex.io/loader.js";
+
+type TrustindexGlobal = { initWidgetsFromDom?: () => void };
+
+// Load the widget's preset stylesheet (the DOM-init path expects the page to
+// provide it — that's how Trustindex's own WordPress plugin works too).
+const loadWidgetCss = (widgetEl: Element) =>
+  new Promise<void>((resolve) => {
+    const layoutId = widgetEl.getAttribute("data-layout-id");
+    const setId = widgetEl.getAttribute("data-set-id");
+    const cssVersion = widgetEl.getAttribute("data-css-version");
+    if (!layoutId || !setId) return resolve();
+    const version = cssVersion ? `v${cssVersion}/` : "";
+    const href = `https://cdn.trustindex.io/assets/widget-presetted-css/${version}${layoutId}-${setId}.css`;
+    if (document.querySelector(`link[href="${href}"]`)) return resolve();
+    const link = document.createElement("link");
+    link.rel = "stylesheet";
+    link.href = href;
+    link.onload = () => resolve();
+    link.onerror = () => resolve();
+    document.head.appendChild(link);
+  });
+
+const loadLoader = () =>
+  new Promise<void>((resolve) => {
+    if ((window as unknown as { Trustindex?: TrustindexGlobal }).Trustindex) return resolve();
+    const script = document.createElement("script");
+    script.src = TRUSTINDEX_LOADER;
+    script.async = true;
+    script.onload = () => resolve();
+    script.onerror = () => resolve();
+    document.head.appendChild(script);
+  });
+
+const TrustindexWidget = () => {
+  const ref = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const host = ref.current;
+    if (!host) return;
+    let cancelled = false;
+
+    fetch(TRUSTINDEX_CONTENT)
+      .then((r) => (r.ok ? r.text() : Promise.reject(new Error(String(r.status)))))
+      .then(async (html) => {
+        if (cancelled) return;
+        host.innerHTML = html;
+        const widgetEl = host.querySelector(".ti-widget");
+        if (!widgetEl) return;
+        await Promise.all([loadWidgetCss(widgetEl), loadLoader()]);
+        if (cancelled) return;
+        (window as unknown as { Trustindex?: TrustindexGlobal }).Trustindex?.initWidgetsFromDom?.();
+      })
+      .catch(() => {
+        /* widget unavailable — the section simply stays empty */
+      });
+
+    return () => {
+      cancelled = true;
+      host.replaceChildren();
+    };
+  }, []);
+
+  return <div ref={ref} className="min-h-24" />;
+};
 
 // Video testimonials shown on this page. Add a new entry HERE: `src` is the
 // embed URL (for Facebook: the plugins/video.php link from the video's Embed
@@ -80,11 +154,22 @@ const ReviewsPage = () => {
         )}
       </section>
 
-      {/* Written reviews on Yelp */}
+      {/* Written reviews from Google & Yelp (Trustindex widget) */}
+      <section className="container-tight pb-14">
+        <div className="max-w-2xl mb-10">
+          <span className="eyebrow">Written Reviews</span>
+          <h2 className="mt-4 text-4xl md:text-5xl font-light tracking-tight">
+            From Google &amp; Yelp.
+          </h2>
+        </div>
+        <TrustindexWidget />
+      </section>
+
+      {/* Our record on Yelp */}
       <section className="bg-surface/40 border-y border-white/5">
         <div className="container-tight py-14 grid lg:grid-cols-2 gap-12 items-center">
           <div className="space-y-6">
-            <span className="eyebrow">Written Reviews</span>
+            <span className="eyebrow">Our Record</span>
             <h2 className="text-3xl md:text-4xl font-light tracking-tight text-balance">
               {SITE.reviewCount} more reviews live on {SITE.reviewPlatform}.
             </h2>

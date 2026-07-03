@@ -34,7 +34,7 @@ const sections = [
   {
     h: "Third-party services",
     p: [
-      "This site is hosted on Vercel and uses Supabase to receive contact-form submissions. These providers may set strictly necessary cookies or process limited technical data to deliver the service. We use Google Analytics 4 for aggregate traffic measurement (see above); you can opt out at any time. Our Reviews page embeds client video testimonials hosted on Facebook — when you view or play these videos, Facebook may set its own cookies under its own policies. We do not run third-party advertising trackers.",
+      "This site is hosted on Vercel and uses Supabase to receive contact-form submissions. These providers may set strictly necessary cookies or process limited technical data to deliver the service. We use Google Analytics 4 for aggregate traffic measurement (see above); you can opt out at any time. Our Reviews page embeds client video testimonials hosted on Facebook and displays recent Google and Yelp reviews via the Trustindex widget — these providers may set their own cookies under their own policies when you view that page. We do not run third-party advertising trackers.",
     ],
   },
   {

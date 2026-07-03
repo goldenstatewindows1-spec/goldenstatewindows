@@ -104,7 +104,7 @@ try {
     // ship in the snapshot; this only keeps networkidle2 fast and deterministic.
     await page.setRequestInterception(true);
     page.on("request", (req) => {
-      if (/googletagmanager\.com|google-analytics\.com|analytics\.google\.com|facebook\.com|facebook\.net|fbcdn\.net/.test(req.url())) {
+      if (/googletagmanager\.com|google-analytics\.com|analytics\.google\.com|facebook\.com|facebook\.net|fbcdn\.net|trustindex\.io/.test(req.url())) {
         return req.abort();
       }
       return req.continue();
