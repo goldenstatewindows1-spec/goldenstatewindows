@@ -70,6 +70,10 @@
   }
 
   html {
+    /* Bump the whole site's type up one step (16px → 18px base). Every text
+       size is rem-based, so this scales all of it — headings, body, buttons,
+       nav — proportionally. Tune this single value to taste. */
+    font-size: 112.5%;
     scroll-behavior: smooth;
   }
 
