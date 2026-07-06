@@ -22,14 +22,14 @@ export const SITE = {
   emailHref: "mailto:info@goldenstatewindows.com",
 
   // Address (keep NAP identical everywhere it appears)
-  street: "1517 Palmette Ave",
-  city: "Pacifica",
+  street: "331 Philip Dr, Ste. 206",
+  city: "Daly City",
   state: "CA",
-  zip: "94044",
+  zip: "94015",
   country: "US",
-  address: "1517 Palmette Ave, Pacifica, CA 94044",
-  cityState: "Pacifica, CA",
-  geo: { lat: 37.636, lng: -122.4869 }, // TODO: refine to the exact rooftop coordinates
+  address: "331 Philip Dr, Ste. 206, Daly City, CA 94015",
+  cityState: "Daly City, CA",
+  geo: { lat: 37.6879, lng: -122.4702 }, // TODO: refine to the exact rooftop coordinates
 
   // Company facts
   foundedYear: FOUNDED_YEAR,
@@ -63,7 +63,7 @@ export const SITE = {
     },
   ],
 
-  // Service areas (Bay Area, Peninsula-first around the Pacifica HQ)
+  // Service areas (Bay Area, Peninsula-first around the Daly City HQ)
   serviceAreaLabel: "San Francisco Bay Area",
   serviceAreas: [
     "Pacifica",

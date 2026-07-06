@@ -188,7 +188,7 @@ const ContactPage = () => {
                     <Input
                       id="city"
                       autoComplete="address-level2"
-                      placeholder="Pacifica"
+                      placeholder="Daly City"
                       maxLength={120}
                       className={inputBase}
                       aria-invalid={!!errors.city}

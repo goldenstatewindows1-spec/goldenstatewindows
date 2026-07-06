@@ -1,7 +1,7 @@
 // Per-city service-area content for local SEO landing pages (/service-areas/:slug).
 // Copy is city-specific and factual — company-wide figures (8,000+ homes, 4.8/393
 // Yelp) are never reattributed to a single city, and there is no local office
-// besides the Pacifica HQ. Update a city's copy HERE.
+// besides the Daly City HQ. Update a city's copy HERE.
 
 export interface ServiceAreaFaq {
   q: string;
@@ -17,7 +17,7 @@ export interface ServiceArea {
   slug: string;
   name: string;
   county: string;
-  /** Honest proximity to the Pacifica HQ, shown as an eyebrow/tag. */
+  /** Honest proximity to the Daly City HQ, shown as an eyebrow/tag. */
   distance: string;
   metaTitle: string;
   metaDescription: string;
@@ -36,29 +36,29 @@ export const SERVICE_AREAS: ServiceArea[] = [
     slug: "pacifica",
     name: "Pacifica",
     county: "San Mateo County",
-    distance: "Our home base",
+    distance: "~10 min from our Daly City HQ",
     metaTitle: "Pacifica Window & Siding Installation | Golden State Windows",
     metaDescription:
-      "Golden State Windows is headquartered in Pacifica, CA. Coastal-grade window replacement, siding & doors built for fog and salt air. Free in-home consultation.",
+      "Coastal-grade window replacement, siding & doors for Pacifica, CA — built for fog and salt air. Family-run since 1989, licensed & insured. Free in-home consultation.",
     h1Lead: "Window & Siding Installation Built for ",
     h1Highlight: "Pacifica",
     h1Tail: " Coastal Living",
     intro:
-      "Pacifica isn't just where we work; it's where we're based. Our headquarters sits right here on the San Mateo County coast, so we understand firsthand what fog, salt air, and wind-driven rain do to a home. Since 1989, Golden State Windows has installed coastal-grade windows, siding, and doors for our neighbors, with 100% in-house crews and no subcontractors.",
+      "Pacifica's homes sit right on the Pacific, and the coast is hard on them — fog, salt air, and wind-driven rain wear ordinary windows out fast. Golden State Windows knows this coastline well: our shop is just north in Daly City, only minutes away. Since 1989 we've installed coastal-grade windows, siding, and doors here, with 100% in-house crews and no subcontractors.",
     sections: [
       {
         heading: "Engineered for Salt, Fog & Coastal Wind",
         body: "Homes a few blocks from the Pacific take a beating that inland houses never see. Persistent fog, salt-laden air, and wind-driven rain corrode hardware, work moisture behind siding, and wear out seals faster. That's why our Pacifica installations lean on moisture-tight, weatherproof detailing and corrosion-resistant hardware. We handle full-frame and pocket window replacement in vinyl, fiberglass, aluminum, and clad-wood, plus fiber-cement, engineered-wood, and vinyl siding built to stand up to the coast. Energy-efficient, Title-24 and ENERGY STAR windows can also cut heating and cooling costs by up to roughly 30%.",
       },
       {
-        heading: "Your Hometown Window Contractor",
-        body: "As a family-run company headquartered in Pacifica, we're not a crew dispatched from across the Bay; we're your neighbors. Golden State Windows has served 8,000+ homes across the San Francisco Bay Area since 1989, earning a 4.8/5 rating over 393 Yelp reviews. Every job is done by our own licensed, bonded, and insured in-house crews, never subcontractors, with permits handled in-house. Entry, patio, French, and sliding doors round out the work, and it all starts with a free, no-obligation in-home consultation.",
+        heading: "A Contractor Who Knows the Coast",
+        body: "Based just north in Daly City, we're minutes from Pacifica — not a crew dispatched from across the Bay. Golden State Windows has served 8,000+ homes across the San Francisco Bay Area since 1989, earning a 4.8/5 rating over 393 Yelp reviews. Every job is done by our own licensed, bonded, and insured in-house crews, never subcontractors, with permits handled in-house. Entry, patio, French, and sliding doors round out the work, and it all starts with a free, no-obligation in-home consultation.",
       },
     ],
     faqs: [
       {
-        q: "Are you actually based in Pacifica?",
-        a: "Yes. Pacifica is our home city; our headquarters is here at 1517 Palmette Ave. When you call Golden State Windows, you're working with neighbors who live and work on the same coast your home sits on, not a crew dispatched from elsewhere in the Bay Area.",
+        q: "Do you serve all of Pacifica?",
+        a: "Yes. We install throughout Pacifica, from Sharp Park down to Linda Mar. Our shop is just north in Daly City, only minutes away, so scheduling visits and follow-up along the coast is easy.",
       },
       {
         q: "How do you handle Pacifica's fog and salt air?",
@@ -69,21 +69,21 @@ export const SERVICE_AREAS: ServiceArea[] = [
         a: "Yes. We use 100% in-house crews, no subcontractors, and handle permits in-house. Golden State Windows is licensed, bonded, and insured. It all begins with a free, no-obligation in-home consultation in Pacifica.",
       },
     ],
-    ctaLine: "Book a free, no-obligation in-home consultation right here in Pacifica.",
+    ctaLine: "Book a free, no-obligation in-home consultation anywhere in Pacifica.",
   },
   {
     slug: "daly-city",
     name: "Daly City",
     county: "San Mateo County",
-    distance: "~15 min from our shop",
+    distance: "Our home base",
     metaTitle: "Daly City Window Replacement & Siding | Golden State Windows",
     metaDescription:
-      "Window replacement, siding & doors built for Daly City's fog and wind. Family-run since 1989, in-house crews, licensed & insured. Book a free in-home consultation.",
+      "Golden State Windows is based in Daly City, CA — window replacement, siding & doors built for the fog and wind. Family-run since 1989, in-house crews, licensed & insured. Free in-home consultation.",
     h1Lead: "Windows built for the fog and wind of ",
     h1Highlight: "Daly City",
     h1Tail: "",
     intro:
-      "Few Bay Area cities test a window like Daly City does. The near-constant coastal fog and wind that roll in off the Pacific push moisture and drafts through any gap they can find. Golden State Windows engineers replacements to seal tight against that weather — and since our Pacifica shop sits about 15 minutes away, we know exactly what your home is up against.",
+      "Few Bay Area cities test a window like Daly City does. The near-constant coastal fog and wind that roll in off the Pacific push moisture and drafts through any gap they can find. Golden State Windows engineers replacements to seal tight against that weather — and because Daly City is our home base, we know exactly what your home is up against.",
     sections: [
       {
         heading: "Westlake Homes, Sealed and Warmer",
@@ -91,13 +91,13 @@ export const SERVICE_AREAS: ServiceArea[] = [
       },
       {
         heading: "A Contractor You Can Stand Behind",
-        body: "Golden State Windows has been family-run since 1989, more than 30 years spent installing across the Bay Area. Every job runs on our own 100% in-house crews — no subcontractors — and we handle permits ourselves. We're licensed, bonded, and insured. It starts with a free, no-obligation in-home consultation, where we measure, talk options, and give you a straight quote.",
+        body: "Golden State Windows has been family-run since 1989, more than 30 years spent installing across the Bay Area — and Daly City is home. Every job runs on our own 100% in-house crews — no subcontractors — and we handle permits ourselves. We're licensed, bonded, and insured. It starts with a free, no-obligation in-home consultation, where we measure, talk options, and give you a straight quote.",
       },
     ],
     faqs: [
       {
         q: "Do you serve all of Daly City?",
-        a: "Yes. We install throughout Daly City, from the Westlake tract homes to newer construction across the city. Our shop is in nearby Pacifica, roughly a 15-minute drive, so scheduling visits and follow-up in Daly City is straightforward.",
+        a: "Yes. We install throughout Daly City, from the Westlake tract homes to newer construction across the city — and since Daly City is our home base, scheduling visits and follow-up here couldn't be easier.",
       },
       {
         q: "Will new windows really help with the fog, wind, and cold?",
@@ -114,7 +114,7 @@ export const SERVICE_AREAS: ServiceArea[] = [
     slug: "south-san-francisco",
     name: "South San Francisco",
     county: "San Mateo County",
-    distance: "Just north of Pacifica",
+    distance: "Minutes from our Daly City HQ",
     metaTitle: "South San Francisco Window Replacement | Golden State Windows",
     metaDescription:
       "Window replacement, siding, and door installation in South San Francisco, CA. Family-run since 1989, in-house crews, licensed & insured. Book a free in-home consultation.",
@@ -122,7 +122,7 @@ export const SERVICE_AREAS: ServiceArea[] = [
     h1Highlight: "South San Francisco",
     h1Tail: " Homes",
     intro:
-      "The Industrial City sits right on the bay, and that means marine air and steady wind test every seal on your house. Golden State Windows installs replacement windows, siding, and doors built to keep South San Francisco homes tight, quiet, and comfortable, year after year. We're a family-run contractor working from nearby Pacifica, and every project runs on our own crews.",
+      "The Industrial City sits right on the bay, and that means marine air and steady wind test every seal on your house. Golden State Windows installs replacement windows, siding, and doors built to keep South San Francisco homes tight, quiet, and comfortable, year after year. We're a family-run contractor based just north in Daly City, and every project runs on our own crews.",
     sections: [
       {
         heading: "Built for Bayside Weather",
@@ -136,7 +136,7 @@ export const SERVICE_AREAS: ServiceArea[] = [
     faqs: [
       {
         q: "Do you serve all of South San Francisco?",
-        a: "Yes. We service homes throughout South San Francisco and the surrounding Peninsula from our Pacifica headquarters, a short drive south. There's no local showroom to visit; instead, we come to you for a free in-home consultation and measure everything on site.",
+        a: "Yes. We service homes throughout South San Francisco and the surrounding Peninsula from our Daly City headquarters, just a short drive south. There's no local showroom to visit; instead, we come to you for a free in-home consultation and measure everything on site.",
       },
       {
         q: "Which windows hold up best against bay wind and marine air?",
@@ -153,7 +153,7 @@ export const SERVICE_AREAS: ServiceArea[] = [
     slug: "san-mateo",
     name: "San Mateo",
     county: "San Mateo County",
-    distance: "A short drive up the Peninsula",
+    distance: "A short drive down the Peninsula",
     metaTitle: "San Mateo Window Replacement & Siding | Golden State Windows",
     metaDescription:
       "Window replacement, siding & door installation in San Mateo, CA. Custom-fit windows for craftsman to modern homes, in-house crews, licensed & insured. Free consultation.",
@@ -169,13 +169,13 @@ export const SERVICE_AREAS: ServiceArea[] = [
       },
       {
         heading: "Why San Mateo homeowners choose us",
-        body: "Golden State Windows has been family-run since 1989, with 8,000+ Bay Area homes serviced and a 4.8/5 rating across 393 Yelp reviews. Every job is run by our own crews — no subcontractors. We're licensed, bonded, and insured, and San Mateo is a straightforward drive from our Pacifica headquarters. Start with a free, no-obligation in-home consultation.",
+        body: "Golden State Windows has been family-run since 1989, with 8,000+ Bay Area homes serviced and a 4.8/5 rating across 393 Yelp reviews. Every job is run by our own crews — no subcontractors. We're licensed, bonded, and insured, and San Mateo is a straightforward drive from our Daly City headquarters. Start with a free, no-obligation in-home consultation.",
       },
     ],
     faqs: [
       {
         q: "Do you service all of San Mateo?",
-        a: "Yes. We serve San Mateo throughout San Mateo County from our Pacifica headquarters, an easy drive up the Peninsula. There's no local showroom — we come to you for a free, no-obligation in-home consultation and handle measurement, installation, and permits from there.",
+        a: "Yes. We serve San Mateo throughout San Mateo County from our Daly City headquarters, an easy drive down the Peninsula. There's no local showroom — we come to you for a free, no-obligation in-home consultation and handle measurement, installation, and permits from there.",
       },
       {
         q: "Can you match windows on an older craftsman home?",
@@ -192,7 +192,7 @@ export const SERVICE_AREAS: ServiceArea[] = [
     slug: "san-bruno",
     name: "San Bruno",
     county: "San Mateo County",
-    distance: "Just over the hill",
+    distance: "Minutes down the Peninsula",
     metaTitle: "San Bruno Window Replacement & Siding | Golden State Windows",
     metaDescription:
       "Window replacement, siding, and door installation in San Bruno, CA. Family-run since 1989, in-house crews, licensed & insured. Book a free in-home consultation.",
@@ -200,7 +200,7 @@ export const SERVICE_AREAS: ServiceArea[] = [
     h1Highlight: "San Bruno",
     h1Tail: "",
     intro:
-      "San Bruno's hillside neighborhoods take a steady beating from Peninsula wind, and much of the city's older housing stock still runs on single-pane glass that leaks heat and rattles in a gust. Golden State Windows replaces those tired windows with tight, energy-efficient units built to hold up on an exposed lot. We're just over the hill in Pacifica, and we've been doing this since 1989.",
+      "San Bruno's hillside neighborhoods take a steady beating from Peninsula wind, and much of the city's older housing stock still runs on single-pane glass that leaks heat and rattles in a gust. Golden State Windows replaces those tired windows with tight, energy-efficient units built to hold up on an exposed lot. We're based just up the Peninsula in Daly City, and we've been doing this since 1989.",
     sections: [
       {
         heading: "Built for San Bruno Homes",
@@ -214,7 +214,7 @@ export const SERVICE_AREAS: ServiceArea[] = [
     faqs: [
       {
         q: "Do you serve all of San Bruno?",
-        a: "Yes. We cover San Bruno top to bottom, from the neighborhoods near SFO to the hillside streets, working out of our Pacifica headquarters just over the hill. There's no local showroom to visit; instead we come to you for a free in-home consultation and measurement.",
+        a: "Yes. We cover San Bruno top to bottom, from the neighborhoods near SFO to the hillside streets, working out of our Daly City headquarters nearby. There's no local showroom to visit; instead we come to you for a free in-home consultation and measurement.",
       },
       {
         q: "Will new windows help with San Bruno's wind and drafts?",
@@ -239,7 +239,7 @@ export const SERVICE_AREAS: ServiceArea[] = [
     h1Highlight: "Burlingame's",
     h1Tail: " Character Homes",
     intro:
-      "Behind Burlingame's tree-lined streets sit some of the Peninsula's most distinctive homes — craftsman, Tudor, and Spanish-revival among them. Replacing windows here isn't about swapping glass; it's about protecting the details that give a house its character. Golden State Windows brings custom-matched, clad-wood craftsmanship to that work, just a short Peninsula drive from our Pacifica headquarters.",
+      "Behind Burlingame's tree-lined streets sit some of the Peninsula's most distinctive homes — craftsman, Tudor, and Spanish-revival among them. Replacing windows here isn't about swapping glass; it's about protecting the details that give a house its character. Golden State Windows brings custom-matched, clad-wood craftsmanship to that work, just a short Peninsula drive from our Daly City headquarters.",
     sections: [
       {
         heading: "Preserving Burlingame's Architecture",
@@ -257,7 +257,7 @@ export const SERVICE_AREAS: ServiceArea[] = [
       },
       {
         q: "Do you serve Burlingame from a local office?",
-        a: "We serve Burlingame from our Pacifica headquarters, a short Peninsula drive away. There's no separate Burlingame showroom, but our in-house crews cover the city directly and start every project with a free in-home consultation.",
+        a: "We serve Burlingame from our Daly City headquarters, a short Peninsula drive away. There's no separate Burlingame showroom, but our in-house crews cover the city directly and start every project with a free in-home consultation.",
       },
       {
         q: "Will new windows lower my energy bills?",
