@@ -13,7 +13,7 @@ export const SITE = {
   legalName: "Golden State Windows",
   tagline: "The Bay Area's Largest & Most Trusted Window Company Since 1989",
   description:
-    "Golden State Windows is the San Francisco Bay Area's largest and most trusted window replacement, installation, and siding company. Serving 8,000+ homes since 1989 — every window backed by a full lifetime warranty.",
+    "Golden State Windows is the San Francisco Bay Area's largest and most trusted window replacement, installation, and siding company. Serving 8,000+ homes since 1989 with 100% in-house crews.",
 
   // Contact
   phone: "(800) 748-6448",
@@ -37,7 +37,6 @@ export const SITE = {
   yearsBadge: `${Math.floor((CURRENT_YEAR - FOUNDED_YEAR) / 5) * 5}+`, // rounded, e.g. "35+"
   homesServed: 8000,
   homesServedLabel: "8,000+",
-  warranty: "Full Lifetime Warranty",
 
   // Reputation (real Yelp figures)
   rating: 4.8,

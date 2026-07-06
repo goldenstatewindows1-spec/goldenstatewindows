@@ -17,7 +17,6 @@ import { Mail, Phone, MapPin, Clock } from "lucide-react";
 
 const faqs = [
   { q: "How long does a typical window installation take?", a: "Most full-home replacements are completed in 2–5 days depending on the number of openings. We'll provide a precise timeline in your itemized estimate." },
-  { q: "What's the warranty?", a: "A full lifetime warranty on every window we install, transferable to a new owner. Manufacturer warranties on materials range from 20 years to lifetime depending on the product." },
   { q: "Do you offer financing?", a: "Yes — we offer flexible financing options. Ask your consultant about current plans and terms at your free consultation." },
   { q: "Are you licensed and insured?", a: `Yes. ${SITE.license} — California CSLB License #${SITE.licenseNumber} — with full workers' comp coverage. Documentation is available on request.` },
 ];
@@ -304,10 +303,6 @@ const ContactPage = () => {
               <div className="flex justify-between border-b border-white/5 pb-3">
                 <span className="text-muted-foreground">CSLB License</span>
                 <span className="technical-mono">#{SITE.licenseNumber}</span>
-              </div>
-              <div className="flex justify-between border-b border-white/5 pb-3">
-                <span className="text-muted-foreground">Warranty</span>
-                <span className="technical-mono">Lifetime</span>
               </div>
               <div className="flex justify-between border-b border-white/5 pb-3">
                 <span className="text-muted-foreground">{SITE.reviewPlatform} Rating</span>

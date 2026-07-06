@@ -116,12 +116,6 @@ export const Footer = () => {
               </li>
               <li>
                 <span className="block text-[10px] uppercase tracking-widest text-primary mb-0.5">
-                  Warranty
-                </span>
-                {SITE.warranty}
-              </li>
-              <li>
-                <span className="block text-[10px] uppercase tracking-widest text-primary mb-0.5">
                   {SITE.reviewPlatform} Rating
                 </span>
                 {SITE.rating}★ · {SITE.reviewCount} reviews

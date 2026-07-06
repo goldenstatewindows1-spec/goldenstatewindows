@@ -26,7 +26,7 @@ const sections = [
   {
     h: "Warranties on our work",
     p: [
-      "Warranty coverage for products and workmanship — including the lifetime warranty we advertise — is defined in the written contract and warranty documents you receive for your project. Summaries on this website do not expand or modify those documents.",
+      "Warranty coverage for products and workmanship is defined in the written contract and warranty documents you receive for your project. Any warranty summaries on this website do not expand or modify those documents.",
     ],
   },
   {

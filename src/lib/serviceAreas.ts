@@ -44,7 +44,7 @@ export const SERVICE_AREAS: ServiceArea[] = [
     h1Highlight: "Pacifica",
     h1Tail: " Coastal Living",
     intro:
-      "Pacifica isn't just where we work; it's where we're based. Our headquarters sits right here on the San Mateo County coast, so we understand firsthand what fog, salt air, and wind-driven rain do to a home. Since 1989, Golden State Windows has installed coastal-grade windows, siding, and doors for our neighbors, with 100% in-house crews and a full lifetime warranty on every window.",
+      "Pacifica isn't just where we work; it's where we're based. Our headquarters sits right here on the San Mateo County coast, so we understand firsthand what fog, salt air, and wind-driven rain do to a home. Since 1989, Golden State Windows has installed coastal-grade windows, siding, and doors for our neighbors, with 100% in-house crews and no subcontractors.",
     sections: [
       {
         heading: "Engineered for Salt, Fog & Coastal Wind",
@@ -66,7 +66,7 @@ export const SERVICE_AREAS: ServiceArea[] = [
       },
       {
         q: "Do you handle permits and all the work yourselves?",
-        a: "Yes. We use 100% in-house crews, no subcontractors, and handle permits in-house. Golden State Windows is licensed, bonded, and insured, and every window carries a full lifetime warranty. It all begins with a free, no-obligation in-home consultation in Pacifica.",
+        a: "Yes. We use 100% in-house crews, no subcontractors, and handle permits in-house. Golden State Windows is licensed, bonded, and insured. It all begins with a free, no-obligation in-home consultation in Pacifica.",
       },
     ],
     ctaLine: "Book a free, no-obligation in-home consultation right here in Pacifica.",
@@ -78,7 +78,7 @@ export const SERVICE_AREAS: ServiceArea[] = [
     distance: "~15 min from our shop",
     metaTitle: "Daly City Window Replacement & Siding | Golden State Windows",
     metaDescription:
-      "Window replacement, siding & doors built for Daly City's fog and wind. Family-run since 1989, in-house crews, lifetime warranty. Book a free in-home consultation.",
+      "Window replacement, siding & doors built for Daly City's fog and wind. Family-run since 1989, in-house crews, licensed & insured. Book a free in-home consultation.",
     h1Lead: "Windows built for the fog and wind of ",
     h1Highlight: "Daly City",
     h1Tail: "",
@@ -91,7 +91,7 @@ export const SERVICE_AREAS: ServiceArea[] = [
       },
       {
         heading: "A Contractor You Can Stand Behind",
-        body: "Golden State Windows has been family-run since 1989, more than 30 years spent installing across the Bay Area. Every job runs on our own 100% in-house crews — no subcontractors — and we handle permits ourselves. We're licensed, bonded, and insured, and every window we set carries a full lifetime warranty. It starts with a free, no-obligation in-home consultation, where we measure, talk options, and give you a straight quote.",
+        body: "Golden State Windows has been family-run since 1989, more than 30 years spent installing across the Bay Area. Every job runs on our own 100% in-house crews — no subcontractors — and we handle permits ourselves. We're licensed, bonded, and insured. It starts with a free, no-obligation in-home consultation, where we measure, talk options, and give you a straight quote.",
       },
     ],
     faqs: [
@@ -117,7 +117,7 @@ export const SERVICE_AREAS: ServiceArea[] = [
     distance: "Just north of Pacifica",
     metaTitle: "South San Francisco Window Replacement | Golden State Windows",
     metaDescription:
-      "Window replacement, siding, and door installation in South San Francisco, CA. Family-run since 1989, in-house crews, lifetime warranty. Book a free in-home consultation.",
+      "Window replacement, siding, and door installation in South San Francisco, CA. Family-run since 1989, in-house crews, licensed & insured. Book a free in-home consultation.",
     h1Lead: "Weather-Tight Windows & Doors for ",
     h1Highlight: "South San Francisco",
     h1Tail: " Homes",
@@ -130,7 +130,7 @@ export const SERVICE_AREAS: ServiceArea[] = [
       },
       {
         heading: "Why South San Francisco Chooses Golden State",
-        body: "We've installed windows, siding, and doors across the Bay Area since 1989, more than 30 years of hands-on work with a 4.8/5 rating across 393 Yelp reviews. Every window carries a full lifetime warranty, and our own licensed, bonded, and insured crews do the work, no subcontractors. We handle permits in-house, so your project stays on schedule. It all starts with a free, no-obligation in-home consultation.",
+        body: "We've installed windows, siding, and doors across the Bay Area since 1989, more than 30 years of hands-on work with a 4.8/5 rating across 393 Yelp reviews. Our own licensed, bonded, and insured crews do the work, no subcontractors. We handle permits in-house, so your project stays on schedule. It all starts with a free, no-obligation in-home consultation.",
       },
     ],
     faqs: [
@@ -144,7 +144,7 @@ export const SERVICE_AREAS: ServiceArea[] = [
       },
       {
         q: "Do you handle permits for South San Francisco projects?",
-        a: "Yes. We handle permits in-house as part of the job, so you don't have to coordinate with the city yourself. Our own crews manage the full installation from start to finish, and every window is backed by a full lifetime warranty.",
+        a: "Yes. We handle permits in-house as part of the job, so you don't have to coordinate with the city yourself. Our own crews manage the full installation from start to finish, and we're licensed, bonded, and insured.",
       },
     ],
     ctaLine: "Book a free, no-obligation in-home consultation anywhere in South San Francisco.",
@@ -156,7 +156,7 @@ export const SERVICE_AREAS: ServiceArea[] = [
     distance: "A short drive up the Peninsula",
     metaTitle: "San Mateo Window Replacement & Siding | Golden State Windows",
     metaDescription:
-      "Window replacement, siding & door installation in San Mateo, CA. Custom-fit windows for craftsman to modern homes, lifetime warranty, in-house crews. Free consultation.",
+      "Window replacement, siding & door installation in San Mateo, CA. Custom-fit windows for craftsman to modern homes, in-house crews, licensed & insured. Free consultation.",
     h1Lead: "Window replacement built for ",
     h1Highlight: "San Mateo",
     h1Tail: " homes of every era.",
@@ -169,7 +169,7 @@ export const SERVICE_AREAS: ServiceArea[] = [
       },
       {
         heading: "Why San Mateo homeowners choose us",
-        body: "Golden State Windows has been family-run since 1989, with 8,000+ Bay Area homes serviced and a 4.8/5 rating across 393 Yelp reviews. Every window carries a full lifetime warranty, and every job is run by our own crews — no subcontractors. We're licensed, bonded, and insured, and San Mateo is a straightforward drive from our Pacifica headquarters. Start with a free, no-obligation in-home consultation.",
+        body: "Golden State Windows has been family-run since 1989, with 8,000+ Bay Area homes serviced and a 4.8/5 rating across 393 Yelp reviews. Every job is run by our own crews — no subcontractors. We're licensed, bonded, and insured, and San Mateo is a straightforward drive from our Pacifica headquarters. Start with a free, no-obligation in-home consultation.",
       },
     ],
     faqs: [
@@ -195,7 +195,7 @@ export const SERVICE_AREAS: ServiceArea[] = [
     distance: "Just over the hill",
     metaTitle: "San Bruno Window Replacement & Siding | Golden State Windows",
     metaDescription:
-      "Window replacement, siding, and door installation in San Bruno, CA. Family-run since 1989, in-house crews, lifetime warranty. Book a free in-home consultation.",
+      "Window replacement, siding, and door installation in San Bruno, CA. Family-run since 1989, in-house crews, licensed & insured. Book a free in-home consultation.",
     h1Lead: "Window Replacement & Energy Upgrades in ",
     h1Highlight: "San Bruno",
     h1Tail: "",
@@ -208,7 +208,7 @@ export const SERVICE_AREAS: ServiceArea[] = [
       },
       {
         heading: "Why Golden State Windows",
-        body: "We're a family-run contractor, licensed, bonded, and insured, with a 4.8 out of 5 rating across 393 Yelp reviews and more than 8,000 Bay Area homes behind us. Every window carries a full lifetime warranty, and every job is done by our own 100% in-house crews, never subcontractors, so the people who quote your San Bruno project are the ones who complete it. Consultations are free and no-obligation.",
+        body: "We're a family-run contractor, licensed, bonded, and insured, with a 4.8 out of 5 rating across 393 Yelp reviews and more than 8,000 Bay Area homes behind us. Every job is done by our own 100% in-house crews, never subcontractors, so the people who quote your San Bruno project are the ones who complete it. Consultations are free and no-obligation.",
       },
     ],
     faqs: [
@@ -221,8 +221,8 @@ export const SERVICE_AREAS: ServiceArea[] = [
         a: "They should. Replacing aging single-pane windows with tight, energy-efficient units cuts drafts and noise and can lower heating and cooling costs by up to about 30 percent. On San Bruno's wind-exposed lots, a properly sealed full-frame replacement makes a noticeable difference in comfort.",
       },
       {
-        q: "Are you licensed and insured, and what warranty do you offer?",
-        a: "Golden State Windows is licensed, bonded, and insured, and has been family-run since 1989. Every window we install comes with a full lifetime warranty, and all work is completed by our own in-house crews rather than subcontractors, so accountability stays with us from quote to finish.",
+        q: "Are you licensed and insured?",
+        a: "Golden State Windows is licensed, bonded, and insured, and has been family-run since 1989. All work is completed by our own in-house crews rather than subcontractors, so accountability stays with us from quote to finish.",
       },
     ],
     ctaLine: "Book a free, no-obligation in-home consultation anywhere in San Bruno.",
@@ -234,7 +234,7 @@ export const SERVICE_AREAS: ServiceArea[] = [
     distance: "A short Peninsula drive",
     metaTitle: "Burlingame Window Replacement & Siding | Golden State Windows",
     metaDescription:
-      "Window replacement, siding & door installation in Burlingame, CA. Clad-wood & custom-matched windows for character homes. Lifetime warranty. Free consult: (800) 748-6448.",
+      "Window replacement, siding & door installation in Burlingame, CA. Clad-wood & custom-matched windows for character homes. Licensed & insured. Free consult: (800) 748-6448.",
     h1Lead: "Windows Built to Honor ",
     h1Highlight: "Burlingame's",
     h1Tail: " Character Homes",
@@ -247,7 +247,7 @@ export const SERVICE_AREAS: ServiceArea[] = [
       },
       {
         heading: "Why Homeowners Choose Golden State Windows",
-        body: "Family-run since 1989, we've serviced more than 8,000 Bay Area homes and hold a 4.8/5 rating across 393 Yelp reviews. Every window carries a full lifetime warranty, and every project is completed by our own 100% in-house crews — no subcontractors handling your home. We're licensed, bonded, and insured, and we manage permits in-house so the process stays simple for you. It starts with a free, no-obligation in-home consultation, where we measure, assess, and match materials to your home before any work begins.",
+        body: "Family-run since 1989, we've serviced more than 8,000 Bay Area homes and hold a 4.8/5 rating across 393 Yelp reviews. Every project is completed by our own 100% in-house crews — no subcontractors handling your home. We're licensed, bonded, and insured, and we manage permits in-house so the process stays simple for you. It starts with a free, no-obligation in-home consultation, where we measure, assess, and match materials to your home before any work begins.",
       },
     ],
     faqs: [

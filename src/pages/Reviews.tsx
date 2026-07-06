@@ -202,7 +202,7 @@ const ReviewsPage = () => {
               {[
                 "Highest Yelp rating of any Bay Area window company",
                 `Over ${SITE.homesServedLabel} homes serviced since ${SITE.foundedYear}`,
-                "Full lifetime warranty on every window",
+                `Licensed, bonded & insured — CSLB #${SITE.licenseNumber}`,
               ].map((b) => (
                 <li key={b} className="flex items-start gap-3 text-sm">
                   <Check className="size-4 text-primary mt-0.5 shrink-0" />

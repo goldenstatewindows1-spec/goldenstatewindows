@@ -40,12 +40,12 @@ const services = [
     code: "03",
     title: "Energy-Efficient Windows",
     img: energy,
-    desc: "Triple-pane, gas-filled, low-E glass conversions and Title-24 compliance. Energy-efficient windows can lower heating and cooling costs by up to 30% while keeping your home quieter and more comfortable.",
+    desc: "Double-pane, gas-filled, low-E glass conversions and Title-24 compliance. Energy-efficient windows can lower heating and cooling costs by up to 30% while keeping your home quieter and more comfortable.",
     bullets: [
       "ENERGY STAR Most Efficient certified products",
       "PG&E rebate paperwork handled in-house",
       "Custom solar-gain modeling for your microclimate",
-      "Full lifetime warranty on every window",
+      "Argon-filled, low-E double-pane glass units",
     ],
   },
   {
@@ -67,7 +67,7 @@ const ServicesPage = () => {
     <>
       <Seo
         title="Window Replacement, Siding & Doors in the Bay Area | Golden State Windows"
-        description="Expert window replacement, siding, energy-efficient windows, and door installation across the San Francisco Bay Area. Backed by a full lifetime warranty. Free consultation."
+        description="Expert window replacement, siding, energy-efficient windows, and door installation across the San Francisco Bay Area. Licensed, bonded & insured. Free consultation."
         path="/services"
         jsonLd={breadcrumbLd("Services", "/services")}
       />
@@ -75,7 +75,7 @@ const ServicesPage = () => {
         eyebrow="Capabilities"
         index="01 / SERVICES"
         title={<>Window replacement, siding &amp; <span className="italic font-normal text-primary">energy</span> upgrades.</>}
-        description={`From single-window replacements to full siding packages, every project across the ${SITE.serviceAreaLabel} is approached with the same engineering rigor — and backed by a full lifetime warranty.`}
+        description={`From single-window replacements to full siding packages, every project across the ${SITE.serviceAreaLabel} is approached with the same engineering rigor — by our own in-house crews.`}
       />
 
       <section className="container-tight py-14">

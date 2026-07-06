@@ -13,7 +13,7 @@ const trust = [
   { label: "Established", value: `Since ${SITE.foundedYear}` },
   { label: "Homes Served", value: SITE.homesServedLabel },
   { label: `${SITE.reviewPlatform} Rating`, value: `${SITE.rating}★ · ${SITE.reviewCount}` },
-  { label: "Warranty", value: "Lifetime" },
+  { label: "In-House Crews", value: "100%" },
 ];
 
 const services = [
@@ -41,7 +41,7 @@ const process = [
   { n: "01", t: "Consultation", d: "A free, no-obligation on-site assessment with a senior project consultant." },
   { n: "02", t: "Measurement", d: "Precise custom measurements, material selection, and energy modeling for your home." },
   { n: "03", t: "Installation", d: "Certified in-house crews, meticulous alignment, and full job-site protection." },
-  { n: "04", t: "Lifetime Warranty", d: `Every window backed by a full lifetime warranty from a company trusted since ${SITE.foundedYear}.` },
+  { n: "04", t: "Final Walkthrough", d: "A detailed final walkthrough and complete job-site cleanup before we call the work done." },
 ];
 
 const HomePage = () => {
@@ -49,7 +49,7 @@ const HomePage = () => {
     <>
       <Seo
         title="Bay Area Window Replacement & Siding | Golden State Windows"
-        description="The Bay Area's most trusted window replacement, installation & siding since 1989 — 8,000+ homes, 4.8★ on Yelp, full lifetime warranty. Free quote: (800) 748-6448."
+        description="The Bay Area's most trusted window replacement, installation & siding since 1989 — 8,000+ homes, 4.8★ on Yelp, licensed & insured. Free quote: (800) 748-6448."
         path="/"
       />
       {/* HERO */}
@@ -70,7 +70,7 @@ const HomePage = () => {
                 </h1>
                 <p className="text-lg text-muted-foreground font-light leading-relaxed max-w-[52ch]">
                   Golden State Windows has served over {SITE.homesServedLabel} Bay Area homes since {SITE.foundedYear} — expert
-                  window replacement, installation, and siding, with every window backed by a full lifetime warranty.
+                  window replacement, installation, and siding, all handled by our own in-house crews.
                 </p>
               </div>
 
@@ -197,7 +197,7 @@ const HomePage = () => {
           </div>
           <div className="lg:col-span-7 grid sm:grid-cols-2 gap-px bg-white/5">
             {[
-              { i: Shield, t: "Lifetime Warranty", d: "Every window is backed by a full lifetime warranty, for as long as you own the home." },
+              { i: Shield, t: "Licensed & Insured", d: `Licensed, bonded, and insured — California CSLB #${SITE.licenseNumber} — with full workers' comp coverage.` },
               { i: Award, t: "Title-24 Certified", d: "Every install meets or exceeds California's energy standards." },
               { i: Wrench, t: "In-House Crews", d: "We never subcontract. The team that quotes is the team that installs." },
               { i: Leaf, t: "Energy Efficient", d: "ENERGY STAR windows that can cut heating and cooling costs by up to 30%." },
@@ -218,7 +218,7 @@ const HomePage = () => {
           <div className="max-w-2xl mb-16">
             <span className="eyebrow">The Process</span>
             <h2 className="mt-4 text-4xl md:text-5xl font-light tracking-tight">
-              From consultation to lifetime warranty.
+              From consultation to final walkthrough.
             </h2>
           </div>
           <div className="grid md:grid-cols-4 gap-px bg-white/5">
@@ -275,7 +275,7 @@ const HomePage = () => {
                 </div>
               </div>
               <ul className="space-y-3">
-                {["Highest Yelp rating of any Bay Area window company", `Over ${SITE.homesServedLabel} homes serviced`, "Full lifetime warranty on every window"].map((b) => (
+                {["Highest Yelp rating of any Bay Area window company", `Over ${SITE.homesServedLabel} homes serviced`, `Licensed, bonded & insured — CSLB #${SITE.licenseNumber}`].map((b) => (
                   <li key={b} className="flex items-start gap-3 text-sm">
                     <Check className="size-4 text-primary mt-0.5 shrink-0" />
                     <span className="text-foreground/80">{b}</span>

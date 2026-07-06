@@ -28,7 +28,7 @@ const AboutPage = () => {
     <>
       <Seo
         title="About Golden State Windows | Bay Area Window Company Since 1989"
-        description="Since 1989, Golden State Windows has been the Bay Area's most trusted window and siding company — 8,000+ homes, 100% in-house crews, and a full lifetime warranty."
+        description="Since 1989, Golden State Windows has been the Bay Area's most trusted window and siding company — 8,000+ homes, 100% in-house crews, licensed, bonded & insured."
         path="/about"
         jsonLd={breadcrumbLd("About", "/about")}
       />
@@ -55,8 +55,8 @@ const AboutPage = () => {
             every project — whether it's a single sash on a Victorian or 60 openings on a new-construction estate.
           </p>
           <p className="text-muted-foreground leading-relaxed">
-            We're 100% employee-led. Every measurement, every install, every warranty visit is handled by people on our
-            payroll. That continuity is what allows us to back our work with a true lifetime warranty.
+            We're 100% employee-led. Every measurement, every install, every follow-up is handled by people on our
+            payroll. That continuity is what lets us hold every job to the same exacting standard.
           </p>
         </div>
       </section>
