@@ -292,8 +292,8 @@ const HomePage = () => {
         <div className="relative overflow-hidden bg-surface border border-white/5">
           <div className="absolute inset-0 grid-bg opacity-30 pointer-events-none" />
           <div className="absolute inset-0 pointer-events-none" style={{ background: "var(--gradient-hero)" }} />
-          <div className="relative grid lg:grid-cols-2 gap-12 p-12 lg:p-20 items-center">
-            <div className="space-y-6">
+          <div className="relative grid lg:grid-cols-2 gap-12 p-6 sm:p-10 lg:p-20 items-center">
+            <div className="space-y-6 min-w-0">
               <span className="eyebrow">Begin a Project</span>
               <h2 className="text-4xl md:text-5xl font-light tracking-tight leading-tight text-balance">
                 Schedule your free window consultation.
@@ -302,7 +302,7 @@ const HomePage = () => {
                 A senior consultant will visit your home, assess your goals, and provide a transparent itemized estimate.
               </p>
             </div>
-            <div className="space-y-4 lg:pl-12 lg:border-l border-white/10">
+            <div className="space-y-4 lg:pl-12 lg:border-l border-white/10 min-w-0">
               {["No high-pressure sales", "Free, no-obligation estimate", "Same-week scheduling available"].map((b) => (
                 <div key={b} className="flex items-center gap-4">
                   <div className="size-8 rounded-full bg-primary/10 border border-primary/30 flex items-center justify-center">
@@ -311,11 +311,11 @@ const HomePage = () => {
                   <span className="text-sm">{b}</span>
                 </div>
               ))}
-              <div className="flex flex-wrap gap-4 pt-6">
-                <Button asChild size="lg">
+              <div className="flex flex-col sm:flex-row flex-wrap gap-4 pt-6">
+                <Button asChild size="lg" className="w-full sm:w-auto">
                   <Link to="/contact">Free Quote <ArrowRight className="size-4" /></Link>
                 </Button>
-                <Button asChild variant="outline" size="lg">
+                <Button asChild variant="outline" size="lg" className="w-full sm:w-auto">
                   <a href={SITE.phoneHref}><Phone className="size-4" /> Call Now</a>
                 </Button>
               </div>
