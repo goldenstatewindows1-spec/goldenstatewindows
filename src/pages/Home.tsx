@@ -237,8 +237,8 @@ const HomePage = () => {
       <section className="container-tight py-14 lg:py-20">
         <div className="relative overflow-hidden bg-surface border border-white/5">
           <div className="absolute inset-0 grid-bg opacity-20 pointer-events-none" />
-          <div className="relative grid lg:grid-cols-2 gap-12 p-12 lg:p-20 items-center">
-            <div className="space-y-6">
+          <div className="relative grid lg:grid-cols-2 gap-12 p-6 sm:p-10 lg:p-20 items-center">
+            <div className="space-y-6 min-w-0">
               <span className="eyebrow">Client Record</span>
               <h2 className="text-4xl md:text-5xl font-light tracking-tight leading-tight text-balance">
                 The highest-rated window company in the Bay Area.
@@ -247,20 +247,20 @@ const HomePage = () => {
                 Golden State Windows holds a {SITE.rating}-star rating across {SITE.reviewCount} {SITE.reviewPlatform} reviews —
                 the highest of any Bay Area window company — earned over {SITE.yearsInBusiness} years and {SITE.homesServedLabel} homes.
               </p>
-              <div className="flex flex-wrap gap-4 pt-2">
-                <Button asChild size="lg">
+              <div className="flex flex-col sm:flex-row flex-wrap gap-4 pt-2">
+                <Button asChild size="lg" className="w-full sm:w-auto">
                   <Link to="/reviews">
                     Watch Video Reviews <ArrowRight className="size-4" />
                   </Link>
                 </Button>
-                <Button asChild variant="outline" size="lg">
+                <Button asChild variant="outline" size="lg" className="w-full sm:w-auto">
                   <a href={SITE.reviewsUrl} target="_blank" rel="noopener noreferrer">
                     Read Reviews on {SITE.reviewPlatform} <ArrowRight className="size-4" />
                   </a>
                 </Button>
               </div>
             </div>
-            <div className="lg:pl-12 lg:border-l border-white/10">
+            <div className="lg:pl-12 lg:border-l border-white/10 min-w-0">
               <div className="flex items-center gap-4 mb-6">
                 <div className="text-6xl font-light tracking-tighter text-primary">{SITE.rating}</div>
                 <div>
