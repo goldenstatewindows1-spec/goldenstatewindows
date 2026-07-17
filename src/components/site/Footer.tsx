@@ -13,8 +13,8 @@ export const Footer = () => {
         <div className="grid md:grid-cols-12 gap-12">
           <div className="md:col-span-4">
             <div className="flex items-center gap-3 mb-6">
-              <div className="size-9 bg-primary flex items-center justify-center font-bold text-primary-foreground text-sm">
-                GS
+              <div className="size-11 shrink-0 rounded-md bg-white p-1 flex items-center justify-center">
+                <img src="/logo-emblem.png" alt="" width="44" height="44" className="size-full object-contain" />
               </div>
               <span className="text-base font-semibold uppercase">
                 {SITE.name}

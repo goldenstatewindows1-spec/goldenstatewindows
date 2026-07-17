@@ -85,8 +85,8 @@ export const Navbar = () => {
     >
       <div className="container-tight h-20 flex items-center justify-between">
         <Link to="/" className="flex items-center gap-3 group relative z-50">
-          <div className="size-9 bg-primary flex items-center justify-center font-bold text-primary-foreground tracking-tighter text-sm">
-            GS
+          <div className="size-11 shrink-0 rounded-md bg-white p-1 flex items-center justify-center">
+            <img src="/logo-emblem.png" alt="" width="44" height="44" className="size-full object-contain" />
           </div>
           <div className="leading-tight">
             <div className="text-[15px] font-semibold uppercase tracking-tight">
